@@ -8,13 +8,11 @@ input {
     &[type="number"] {
         background-color: $primary;
         border-radius: 0;
-        color: $primary;
-        text-align: center;
-        font-weight: 500;
+        color: black;
         border: 0px;
         &:focus {
             background-color: $primary;
-            color: $primary;
+            color: black;
         }
     }
     &[type="email"] {
@@ -46,14 +44,12 @@ input {
 
 .form-control.is-invalid,
 select.error {
-    border-color: #ff0000b0 !important;
 }
 
 input {
     &.error {
         + label {
             &::before {
-                border: 2px solid red !important;
             }
         }
     }
@@ -85,7 +81,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     -webkit-text-fill-color: $primary;
-    -webkit-box-shadow: 0 0 0px 1000px $secundary-light inset;
+    -webkit-box-shadow: 0 0 0px 1000px $primary inset;
     transition: background-color 5000s ease-in-out 0s;
     font-weight: 500;
 }
@@ -178,7 +174,11 @@ input[type="number"] {
 .custom-select {
     border-radius: 0;
     border: none;
-    color: $white;
+    color: black;
     background-color: $primary;
     height: auto;
+}
+.btn-primary{
+    border-radius: 0;
+    padding: 0;
 }
