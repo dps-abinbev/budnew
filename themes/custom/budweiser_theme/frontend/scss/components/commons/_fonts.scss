@@ -9,3 +9,15 @@
 	font-style: normal;
 } */
 
+@font-face {
+    font-family: 'Bud';
+    src: url('../fonts/BudBold/BudBold.eot');
+    src: url('../fonts/BudBold/BudBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/BudBold/BudBold.woff2') format('woff2'),
+        url('../fonts/BudBold/BudBold.woff') format('woff'),
+        url('../fonts/BudBold/BudBold.ttf') format('truetype'),
+        url('../fonts/BudBold/BudBold.svg#BudBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
