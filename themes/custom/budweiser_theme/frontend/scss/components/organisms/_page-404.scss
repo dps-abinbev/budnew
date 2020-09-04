@@ -1,0 +1,44 @@
+.page-404{
+   #page-wrapper {
+    #page {
+      background: transparent;
+      #main-wrapper {
+        .col {
+          padding-right: 0;
+          padding-left: 0;
+        }
+        nav.tabs {
+          margin-bottom: 0;
+        }
+        .node__content {
+          margin-top: 0;
+        }
+        .field__label  {
+          display: none;
+        }
+        .field--type-image {
+          margin: 0;
+          width: 100%;
+        }
+        h1 {
+          display: none;
+        }
+        .content-404 {
+
+          p {
+            display: none;
+          }
+        }
+        .field--name-field-background-desktop img {
+          @include mq ("md") {
+          }
+        }
+        .field--name-field-background-mobile img {
+          @include mq ("md") {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

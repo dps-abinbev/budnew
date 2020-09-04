@@ -1,0 +1,237 @@
+.path-agegate {
+  header,
+  .breadcrumb {
+    display: none;
+  }
+  #page-wrapper {
+    #page {
+      #main-wrapper {
+        display: flex;
+        align-items: flex-end;
+        background: transparent;
+        @include mq(md) {
+          min-height: 500px;
+        }
+        @include mq(xlg) {
+          min-height: 650px;
+        }
+        .main-content {
+          @include mq(md) {
+            min-height: 500px;
+            max-height: 500px;
+          }
+        }
+        section {
+          max-width: 570px;
+          margin: 0 auto;
+          .block-page-title-block {
+            display: none;
+          }
+          .agegate-form {
+            @extend %bg-age;
+            margin: rem(150px) 0 22px;
+            padding: 0 0 rem(1px) 0;
+            border-radius: $border-radio-base;
+            @include mq(md) {
+              margin: rem(120px) 0;
+            }
+            .block-title {
+              background-color: $green-opacity;
+              display: flex;
+              justify-content: center;
+              padding: 5px 10px;
+              border-radius: $border-radio-base $border-radio-base 0 0;
+              @include mq(md) {
+                padding: 5px 40px;
+              }
+              h2 {
+                font-size: 25px;
+                letter-spacing: 1px;
+                line-height: 1;
+                padding-top: 3px;
+                @include mq(md) {
+                  font-size: 35px;
+                }
+              }
+            }
+            #edit-row-1 {
+              p {
+                text-align: center;
+                margin: 17px auto 0;
+                color: $secundary;
+              }
+            }
+            .form-group {
+              .js-form-wrapper {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+                .js-form-item {
+                  margin: 0 1px;
+                  min-width: 70px;
+                  padding: 0 7px;
+
+                  position: relative;
+                  @include mq(md) {
+                    min-width: 120px;
+                  }
+                  .form-type-number {
+                    max-width: 83px;
+                  }
+                  label.error {
+                    font-size: 10px;
+                    margin-bottom: 0;
+                    position: absolute;
+                    left: 0;
+                    text-align: center;
+                    width: 100%;
+                    line-height: 1;
+                  }
+                  input {
+                    border-radius: 20px;
+                    text-align: center;
+                    min-width: 82px;
+                  }
+                }
+              }
+            }
+            #edit-submit {
+              border-radius: 20px;
+            }
+            .block-labels {
+              display: none;
+            }
+            .block-btn {
+              display: none;
+            }
+            .js-form-wrapper {
+              .js-form-type-checkbox {
+                display: flex;
+                justify-content: center;
+                padding: 3px 0 !important;
+                label {
+                  color: $secundary;
+                  font-size: $font-small;
+                  padding-left: 0;
+                  letter-spacing: 1px;
+                }
+              }
+              .recordar-datos {
+                display: none;
+              }
+            }
+            #edit-row-3 {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              #edit-submit {
+                max-width: 140px;
+                margin: 5px 0 0;
+                width: 140px;
+              }
+            }
+          }
+          .facebook_wrapper {
+            display: none;
+          }
+          ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $primary;
+            opacity: 1; /* Firefox */
+            font-size: $font-base;
+          }
+
+          :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $primary;
+          }
+
+          ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: $primary;
+          }
+          .btn-primary:not(:disabled):not(.disabled):active {
+            background-color: $secundary;
+            border: initial;
+            color: $primary;
+            letter-spacing: 1px;
+          }
+          .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+            border: 0;
+            color: $secundary;
+            letter-spacing: 1px;
+          }
+          .checkbox {
+            .custom-control-input:checked ~ .custom-control-label {
+              &:after {
+                left: -18px;
+                top: 6px;
+                width: 5px;
+                height: 10px;
+                border: solid $primary;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+            }
+          }
+          .custom-control-label {
+            &:before {
+              background-color: $secundary;
+            }
+          }
+        }
+      }
+      .featured-bottom {
+        background-color: $green;
+        padding: 20px 5px;
+        @include mq(lg) {
+          padding: 20px 5px 0px;
+        }
+        .field--name-body {
+          p {
+            color: $text-age;
+            font-size: 8px;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            @include mq(md) {
+              padding: 0 80px;
+            }
+            &:nth-child(4) {
+              margin-top: 40px;
+              border-top: 1px $primary solid;
+              padding-top: 37px !important;
+              @include mq(lg) {
+                border-top: initial;
+                margin-left: 6%;
+                margin-top: 0;
+                padding-top: 10px !important;
+              }
+            }
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+              padding: 10px 20px;
+              margin-bottom: initial;
+              color: $secundary;
+              font-size: 11px;
+              @include mq(lg) {
+                display: inline-block;
+                width: 31%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#agegate-form {
+  .facebook_wrapper {
+    display: none !important;
+  }
+}

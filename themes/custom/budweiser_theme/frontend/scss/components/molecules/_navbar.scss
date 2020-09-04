@@ -1,0 +1,22 @@
+.header {
+}
+.navbar {
+    max-width: 900px;
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                font-size: 16px;
+                @include mq(md) {
+                    font-size: 19px;
+                }
+                &:hover,
+                &.active {
+                }
+            }
+            &:last-child {
+                .nav-link {
+                }
+            }
+        }
+    }
+}

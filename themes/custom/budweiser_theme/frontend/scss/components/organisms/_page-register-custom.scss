@@ -1,0 +1,78 @@
+.registro-custom {
+	#main-wrapper {
+		background-color: transparent;
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		.main-content {
+			margin: rem(-6px) 0 0;
+			padding: 0;
+
+			@include mq(sm) {
+				margin: rem(40px) 0;
+			}
+
+			.webform-submission-registro-hey-bacaneria-form {
+				max-width: rem(500px);
+				padding: rem(20px) rem(15px);
+				width: 100% !important;
+
+				.webform-elements {
+					position: relative;
+
+					#edit-header {
+						h1 {
+							color: $secundary;
+							font-size: rem(45px);
+							text-align: center;
+
+							@include mq(xs) {
+								font-size: rem(65px);
+							}
+
+							@include mq(md) {
+								font-size: rem(65px);
+							}
+						}
+					}
+
+					.notification-button-send {
+						bottom: 0;
+						height: rem(85px);
+						left: 0;
+						margin: 0 auto;
+						position: absolute;
+						right: 0;
+						width: rem(170px);
+
+						@include mq(xs) {
+							width: rem(210px);
+						}
+
+						@include mq(sm) {
+							height: rem(50px);
+							width: rem(300px);
+						}
+
+						p {
+							margin: 0;
+							padding: 0;
+							position: static;
+							width: 100%;
+						}
+					}
+
+					#edit-actions{
+						margin: 0;
+						// padding-bottom: rem(110px);
+
+						@include mq(sm) {
+							// padding-bottom: rem(70px);
+						}
+					}
+				}
+			}
+		}
+	}
+}

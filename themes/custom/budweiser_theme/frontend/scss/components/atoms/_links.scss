@@ -1,0 +1,36 @@
+.site-footer {
+  .nav-link {
+    @extend %a;
+    color: $white;
+  }
+}
+
+.view {
+  a {
+    @extend %link;
+  }
+}
+a.buttom {
+  @extend %link;
+}
+
+%link {
+  color: $secundary;
+  font-size: 14px;
+
+  @include mq(md) {
+    font-size: 19px;
+  }
+  &:hover {
+    text-decoration: none;
+
+  }
+}
+
+%a {
+  font-size: 12px;
+  text-decoration: underline;
+  @include mq(md) {
+    font-size: 13px;
+  }
+}

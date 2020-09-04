@@ -1,0 +1,18 @@
+.breadcrumb {
+  background-color: initial;
+  padding: 0;
+  max-width: $area;
+  margin: 0 auto;
+  @include mq(md) {
+  }
+  .breadcrumb-item {
+    a,
+    .breadcrumb-item {
+      color: $primary;
+      font-size: 14px;
+      @include mq(md) {
+        font-size: 17px;
+      }
+    }
+  }
+}
