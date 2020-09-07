@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Budweiser Core module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if($form_id == 'field_config_edit_form' && isset($form['settings']['on_label'])){
+    $form['settings']['on_label']['#maxlength'] = 250;
+  }
+}
