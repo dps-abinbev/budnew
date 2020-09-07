@@ -1,0 +1,14 @@
+agegate.admin_form:
+  path: /admin/config/system/agegate
+  defaults:
+    _title: 'Age Gate'
+    _form: \Drupal\agegate\Form\AgegateAdminForm
+  requirements:
+    _permission: 'administer age verification'
+agegate.form:
+  path: /agegate
+  defaults:
+    _title: 'Please Verify Your Age'
+    _form: \Drupal\agegate\Form\AgegateForm
+  requirements:
+    _permission: 'access content'

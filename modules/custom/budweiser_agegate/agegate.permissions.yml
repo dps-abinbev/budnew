@@ -1,0 +1,6 @@
+administer age verification:
+  title: 'Configure Age Gate'
+  description: 'Allows users to configure Age Gate settings.'
+skip age verification:
+  title: 'Skip Age Gate'
+  description: 'Allows users to skip Age Gate form.'
