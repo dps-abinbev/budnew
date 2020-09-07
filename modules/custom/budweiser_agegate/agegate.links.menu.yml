@@ -1,0 +1,5 @@
+agegate.admin_form:
+  route_name: agegate.admin_form
+  title: 'Age Gate'
+  description: 'Configure Age Gate module.'
+  parent: system.admin_config_system

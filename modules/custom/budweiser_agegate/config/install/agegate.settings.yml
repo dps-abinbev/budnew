@@ -1,0 +1,5 @@
+agegate_age_limit: 18
+agegate_urls_to_skip: 'user'
+agegate_description: ''
+agegate_user_agents: "Googlebot\nGooglebot-Mobile\nGooglebot-Image\nbingbot\nmsnbot\nslurp"
+agegate_redirect: "https://www.tapintoyourbeer.com/age_check.cfm"

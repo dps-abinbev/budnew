@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * Installation file for agegate module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function agegate_install() {
+  // Set the weight to 1, or even 0 to action before pathauto.
+  module_set_weight('agegate', 1);
+}

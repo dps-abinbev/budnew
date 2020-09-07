@@ -1,0 +1,9 @@
+services:
+  # agegate.age_path_processor:
+  #   class: \Drupal\agegate\AgePathProcessor
+  #   tags:
+  #     - { name: path_processor_inbound, priority: 800, call: addInbound }
+  agegate.agagate_path_redirect:
+    class: \Drupal\agegate\AgegatePathRedirect
+    tags:
+      - { name: event_subscriber, priority: 220 }

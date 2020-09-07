@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ * The age_verification module renders form by redirecting the user to the form
+ * and back after adding their age.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function agegate_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#agegate':
+      return '<p>' . t('Adds an age gate form by redirecting the user to the form and back after adding their age.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function agegate_user_logout($account) {
+  $session = \Drupal::request()->getSession();
+  $session->set('age_verified', 0);
+  // kint($session->get('age_verified'));
+}
+
+function agegate_form_alter(&$form, &$form_state, $form_id){
+    if($form_id == 'agegate_form'){
+     $form['dob']['day']['#attributes']['placeholder'] = t('dia');
+     $form['dob']['month']['#attributes']['placeholder'] = t('mes');
+    }
+}
+
+
+/**
+ * HOOK_preprocess_HOOK().
+ */
+function agegate_page_attachments_alter(array &$page) {
+
+    $page['#attached']['library'][] = 'agegate/agegate';
+  
+}
+
+function agegate_preprocess_html(&$variables) {
+  $page['#attached']['library'][] = 'agegate/agegate';
+}
