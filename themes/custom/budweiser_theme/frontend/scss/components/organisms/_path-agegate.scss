@@ -9,7 +9,6 @@
         background-image: url("../images/banners/1_REGISTRO.jpg");
         background-size: cover;
         background-size: 100%;
-        min-height: 500px;
         background-repeat: no-repeat;
         section {
           max-width: 870px;
@@ -19,7 +18,7 @@
           }
           .agegate-form {
             padding: 0 0 rem(1px) 0;
-            margin: 23rem auto 1rem;
+            margin: 23rem auto 2rem;
             @include mq(md) {
             }
             .block-title {
@@ -124,6 +123,14 @@
                 max-width: 140px;
                 margin: 30px 0 0;
               }
+            }
+            #edit-row-4 {
+              background-image: url("../images/bg/beer-oficial.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              height: 92px;
+              margin: 30px auto 0;
+              width: 116px;
             }
           }
           .facebook_wrapper {
