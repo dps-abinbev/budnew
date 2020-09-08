@@ -3,7 +3,6 @@
   .block {
     margin: initial;
     border: initial;
-    padding: 11px 0 0px;
   }
   .container-fluid {
     padding: 0;
@@ -11,7 +10,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      background-color: $primary;
+      background-color: $primary-light;
       margin: 0;
       padding: 0;
     }
@@ -39,8 +38,8 @@
             color: $black;
             text-decoration: underline;
             font-family: $bud;
-            font-weight: bold;
             font-size: 11px;
+            padding: 14px 20px;
           }
         }
       }
@@ -52,5 +51,5 @@
   }
 }
 .site-footer__top p {
-  margin-top: 0;
+  display: none;
 }
