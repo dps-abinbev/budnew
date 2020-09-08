@@ -41,6 +41,9 @@
         @include mq(md) {
           font-size: 18px;
         }
+        &:hover {
+          border-color: initial;
+        }
       }
       &.active {
         position: relative;
@@ -48,9 +51,6 @@
           background-color: initial;
           border-color: transparent;
           color: $primary;
-          &:hover{
-            border-color: initial;
-          }
         }
         &::before {
           content: "";
