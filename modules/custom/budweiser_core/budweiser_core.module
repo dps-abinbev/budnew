@@ -30,6 +30,8 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
     $form['name']['#weight'] = 2;
     unset($form['mail']);
     $form['actions']['submit']['#value'] = new TranslatableMarkup('RECUPERAR CONTRASEÑA');
+  }elseif($form_id == 'user_register_form'){
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('REGISTRARME');
   }
 }
 
