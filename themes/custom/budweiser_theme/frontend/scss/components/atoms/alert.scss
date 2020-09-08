@@ -7,11 +7,17 @@
       border-color: $primary;
       border: 2px solid $primary;
       color: $white;
-      em{
+      font-family: $bud;
+      letter-spacing: 1px;
+      a {
+        font-family: $bud;
+        letter-spacing: 1px;
+      }
+      em {
         margin-left: 5px;
         margin-right: 5px;
       }
-      hr{
+      hr {
         border-top-color: $primary;
       }
       &::before {
