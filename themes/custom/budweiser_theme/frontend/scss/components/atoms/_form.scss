@@ -21,6 +21,9 @@ input {
     border-radius: 0;
     color: black;
     border: 0px;
+    font-family: $bud;
+    font-size: 18px;
+    letter-spacing: 2px;
     &:focus {
       background-color: $primary-light;
       color: black;
@@ -217,4 +220,7 @@ input[type="number"] {
   color: black;
   background-color: $primary;
   height: auto;
+  font-family: $bud;
+  font-size: 18px;
+  letter-spacing: 2px;
 }

@@ -2,85 +2,12 @@
   #page-wrapper {
     #page {
       #main-wrapper {
-        section {
-          .nav-tabs {
-            .nav-item {
-              a {
-                &.active {
-                }
-              }
-            }
-          }
-          form {
-            label,
-            .description {
-            }
-          }
+        .block-system-main-block .content{
+          padding-bottom: 200px;
         }
       }
     }
   }
 }
-.page-user-15 {
-  #page-wrapper {
-    #page {
-      #main-wrapper {
-      }
-      .featured-bottom {
-      }
-      #main-wrapper,
-      .featured-bottom {
-        section {
-          .nav-tabs {
-            .nav-item {
-              a {
-                &.active {
-                }
-              }
-            }
-          }
-          .form-type-item {
-          }
-          .btn-success {
-          }
-        }
-      }
-    }
-  }
-}
-.path-admin {
-  #page-wrapper {
-    #page {
-      @extend %bg-home;
-      #main-wrapper {
-        section {
-          background-color: $primary;
-          border-radius: $border-radio-base;
-          padding: 30px 50px;
-          max-width: 800px;
-          margin: 40px auto;
-          .nav-tabs {
-            &.primary{
-              display: none;
-            }
-            .nav-item {
-              a {
-                color: $secundary;
-                &.active {
-                  color: $primary;
-                }
-              }
-            }
-          }
-          form {
-            label,
-            .description,
-            .content {
-              color: $secundary;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
+
