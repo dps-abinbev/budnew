@@ -10,12 +10,32 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_form_alter().
  */
 function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if($form_id == 'field_config_edit_form' && isset($form['settings']['on_label'])){
-    $form['settings']['on_label']['#maxlength'] = 250;
+    $form['settings']['on_label']['#type'] = 'textarea';
+    $form['settings']['on_label']['#description'] = t('The html is allowed and the maximum length is 500 characters');
+    $form['settings']['on_label']['#maxlength'] = 500;
+  }elseif ($form_id == 'user_pass'){
+    $form['description'] = [
+      '#type' => 'item',
+      '#markup' => t('Ingresa el correo electrónico que registraste anteriormente para recuperar tu contraseña.'),
+      '#weight' => 1,
+    ];
+    $form['name']['#title'] = new TranslatableMarkup('MAIL');
+    $form['name']['#weight'] = 2;
+    unset($form['mail']);
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('RECUPERAR CONTRASEÑA');
   }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function budweiser_core_local_tasks_alter(&$local_tasks) {
+  unset($local_tasks['user.pass']);
 }
