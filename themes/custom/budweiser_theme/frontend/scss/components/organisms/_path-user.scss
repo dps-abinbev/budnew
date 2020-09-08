@@ -19,6 +19,7 @@
           font-weight: 400;
           font-family: $bud;
           text-transform: uppercase;
+          color: $white;
           @include mq(md) {
             font-size: 36px;
             position: absolute;
@@ -31,10 +32,16 @@
           }
         }
       }
-      .block-system-main-block,
+      .block-system-main-block {
+        background-image: url("../images/bg/fondo-register.png");
+        background-size: cover;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .block-system-main-block .content,
       .tabs {
         max-width: 90%;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
         @include mq(md) {
           max-width: 450px;
         }

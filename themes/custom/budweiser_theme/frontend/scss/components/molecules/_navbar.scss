@@ -1,29 +1,31 @@
 .header {
   background-color: $primary;
-}
-.navbar {
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        font-size: 17px;
-        font-family: $bud;
-        color: $white;
-        @include mq(md) {
-          font-size: 21px;
-          text-transform: uppercase;
-        }
-        &:hover,
-        &.active {
-        }
-      }
-      &:last-child {
+  .navbar {
+    padding: 0;
+    .navbar-nav {
+      .nav-item {
         .nav-link {
+          font-size: 17px;
+          font-family: $bud;
+          color: $white;
+          @include mq(md) {
+            font-size: 21px;
+            text-transform: uppercase;
+          }
+          &:hover,
+          &.active {
+          }
+        }
+        &:last-child {
+          .nav-link {
+          }
         }
       }
     }
   }
 }
-.tabs{
+
+.tabs {
   ul.nav.nav-tabs {
     border-bottom: 1px solid $primary;
     display: flex;
