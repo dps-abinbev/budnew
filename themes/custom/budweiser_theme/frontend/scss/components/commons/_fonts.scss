@@ -21,3 +21,15 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Tahoma-bold';
+    src: url('../fonts/TahomaBold/tahomabd.eot');
+    src: url('../fonts/TahomaBold/tahomabd.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TahomaBold/tahomabd.woff2') format('woff2'),
+        url('../fonts/TahomaBold/Tahoma-bold.woff') format('woff'),
+        url('../fonts/TahomaBold/Tahoma-bold.ttf') format('truetype'),
+        url('../fonts/TahomaBold/Tahoma-bold.svg#Tahoma-bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
