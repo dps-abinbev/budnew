@@ -63,7 +63,7 @@
 						}
 					}
 
-					#edit-actions{
+					#edit-actions {
 						margin: 0;
 						// padding-bottom: rem(110px);
 
@@ -72,6 +72,36 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+.page-user-login {
+	#page-wrapper {
+		#page {
+			#main-wrapper {
+				.block-system-main-block .content {
+					padding-bottom: 200px;
+				}
+			}
+		}
+	}
+}
+.page-user-password {
+	#main-wrapper {
+		.tabs {
+			display: none;
+		}
+		.block-system-main-block {
+			min-height: 400px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 80px auto;
+		}
+		form.user-pass {
+			p {
+				display: none;
 			}
 		}
 	}
