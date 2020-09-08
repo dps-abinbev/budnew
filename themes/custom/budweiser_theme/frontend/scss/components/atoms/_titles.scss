@@ -1,9 +1,10 @@
 .block-title {
   h2.title {
-    color: $secundary;
-    font-size: 19px;
+    color: $white;
+    font-size: 25px;
+    font-family: $bud;
     @include mq(md) {
-      font-size: 25px;
+      font-size: 37px;
     }
   }
 }

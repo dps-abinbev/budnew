@@ -164,7 +164,7 @@ input[type="number"] {
   }
 }
 .custom-control-label::after {
-  background-color: $primary;
+  background-color: $primary-light;
   border-radius: 50%;
 }
 
@@ -192,7 +192,6 @@ input[type="number"] {
   padding-top: 1px;
   &:before {
     background-color: transparent;
-    // border: 2px solid #fff;
   }
 }
 

@@ -1,7 +1,7 @@
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
-	@return #{$pixels/$context}em
+	@return #{$pixels/$context}em;
 }
 
 @mixin bdesktop {
@@ -11,35 +11,43 @@ $browser-context: 16; // Default
 }
 
 // MQS
-@mixin mq ($mquery) {
-	$media-xxs:"(min-width : 320px)"; // iPhone Retina
+@mixin mq($mquery) {
+	$media-xxs: "(min-width : 320px)"; // iPhone Retina
 	$media-xs: "(min-width : 480px)"; // Telefonos
-	$media-sm: "(min-width: 768px)";  // Tablets
+	$media-sm: "(min-width: 768px)"; // Tablets
 	$media-md: "(min-width: 992px)"; // Escritorios
 	$media-lg: "(min-width: 1200px)"; // Resoluciones grandes
 	$media-xlg: "(min-width: 1600px)"; // Resoluciones grandes
 
-
 	@if $mquery == xxs {
-		@media #{$media-xxs} { @content; }
+		@media #{$media-xxs} {
+			@content;
+		}
 	}
 	@if $mquery == xs {
-		@media #{$media-xs} { @content; }
-	}
-	@else if $mquery == sm {
-		@media #{$media-sm} { @content; }
-	}
-	@else if $mquery == md {
-		@media #{$media-md} { @content; }
-	}
-	@else if $mquery == lg {
-		@media #{$media-lg} { @content; }
-	}
-	@else if $mquery == xlg {
-		@media #{$media-xlg} { @content; }
-	}
-	@else {
-		@media ($mquery) { @content; }
+		@media #{$media-xs} {
+			@content;
+		}
+	} @else if $mquery == sm {
+		@media #{$media-sm} {
+			@content;
+		}
+	} @else if $mquery == md {
+		@media #{$media-md} {
+			@content;
+		}
+	} @else if $mquery == lg {
+		@media #{$media-lg} {
+			@content;
+		}
+	} @else if $mquery == xlg {
+		@media #{$media-xlg} {
+			@content;
+		}
+	} @else {
+		@media ($mquery) {
+			@content;
+		}
 	}
 }
 
@@ -49,7 +57,7 @@ $browser-context: 16; // Default
 	background-repeat: no-repeat;
 }
 
-@mixin coverAbsolute ($z) {
+@mixin coverAbsolute($z) {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -64,7 +72,7 @@ $browser-context: 16; // Default
 	background-position: center top;
 }
 
-@mixin iconSVG($path, $size){
+@mixin iconSVG($path, $size) {
 	background-image: url($path);
 	background-size: $size;
 	background-repeat: no-repeat;
@@ -77,7 +85,8 @@ $browser-context: 16; // Default
 %clearfix {
 	*zoom: 1;
 
-	&:before, &:after {
+	&:before,
+	&:after {
 		content: " ";
 		display: table;
 	}
@@ -108,10 +117,10 @@ $browser-context: 16; // Default
 @mixin background-gradient($start-color, $end-color, $orientation) {
 	background: $start-color;
 
-	@if $orientation == 'vertical' {
+	@if $orientation == "vertical" {
 		background: -webkit-linear-gradient(top, $start-color, $end-color);
 		background: linear-gradient(to bottom, $start-color, $end-color);
-	} @else if $orientation == 'horizontal' {
+	} @else if $orientation == "horizontal" {
 		background: -webkit-linear-gradient(left, $start-color, $end-color);
 		background: linear-gradient(to right, $start-color, $end-color);
 	} @else {
@@ -121,44 +130,44 @@ $browser-context: 16; // Default
 }
 
 // Arrows
-@mixin arrow($direction, $color, $size){
-		display: block;
-		height: 0;
-		width: 0;
+@mixin arrow($direction, $color, $size) {
+	display: block;
+	height: 0;
+	width: 0;
 
-		@if $direction == 'top' {
-			border-left: $size solid transparent;
-			border-right: $size solid transparent;
-			border-bottom: $size solid $color;
-		} @else if $direction == 'right' {
-			border-top: $size solid transparent;
-			border-bottom: $size solid transparent;
-			border-left: $size solid $color;
-		} @else if $direction == 'bottom' {
-			border-top: $size solid $color;
-			border-right: $size solid transparent;
-			border-left: $size solid transparent;
-		} @else if $direction == 'left' {
-			border-top: $size solid transparent;
-			border-right: $size solid $color;
-			border-bottom: $size solid transparent;
-		} @else if $direction == 'top-left' {
-			border-top: $size solid $color;
-			border-right: $size solid transparent;
-		} @else if $direction == 'top-right' {
-			border-top: $size solid $color;
-			border-left: $size solid transparent;
-		} @else if $direction == 'bottom-left' {
-			border-bottom: $size solid $color;
-			border-right: $size solid transparent;
-		} @else if $direction == 'bottom-right' {
-			border-bottom: $size solid $color;
-			border-left: $size solid transparent;
-		}
+	@if $direction == "top" {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	} @else if $direction == "right" {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	} @else if $direction == "bottom" {
+		border-top: $size solid $color;
+		border-right: $size solid transparent;
+		border-left: $size solid transparent;
+	} @else if $direction == "left" {
+		border-top: $size solid transparent;
+		border-right: $size solid $color;
+		border-bottom: $size solid transparent;
+	} @else if $direction == "top-left" {
+		border-top: $size solid $color;
+		border-right: $size solid transparent;
+	} @else if $direction == "top-right" {
+		border-top: $size solid $color;
+		border-left: $size solid transparent;
+	} @else if $direction == "bottom-left" {
+		border-bottom: $size solid $color;
+		border-right: $size solid transparent;
+	} @else if $direction == "bottom-right" {
+		border-bottom: $size solid $color;
+		border-left: $size solid transparent;
+	}
 }
 
 // Pseudo
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
 	content: $content;
 	display: $display;
 	position: $pos;
@@ -168,19 +177,17 @@ $browser-context: 16; // Default
 @mixin center($position) {
 	position: absolute;
 
-	@if $position == 'vertical' {
+	@if $position == "vertical" {
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
-	}
-	@else if $position == 'horizontal' {
+	} @else if $position == "horizontal" {
 		left: 50%;
 		-webkit-transform: translateX(-50%);
 		-ms-transform: translateX(-50%);
 		transform: translate(-50%);
-	}
-	@else if $position == 'both' {
+	} @else if $position == "both" {
 		top: 50%;
 		left: 50%;
 		-webkit-transform: translate(-50%, -50%);
@@ -191,10 +198,18 @@ $browser-context: 16; // Default
 
 // Placeholders
 @mixin placeholder {
-	::-webkit-input-placeholder {@content}
-	:-moz-placeholder           {@content}
-	::-moz-placeholder          {@content}
-	:-ms-input-placeholder      {@content}
+	::-webkit-input-placeholder {
+		@content;
+	}
+	:-moz-placeholder {
+		@content;
+	}
+	::-moz-placeholder {
+		@content;
+	}
+	:-ms-input-placeholder {
+		@content;
+	}
 }
 
 // Layout wrapper
@@ -219,4 +234,10 @@ $browser-context: 16; // Default
 		background-color: $hover;
 		color: $color;
 	}
+}
+@mixin textCommun($size) {
+	color: $white;
+	font-size: $size;
+	font-family: $bud;
+	text-transform: uppercase;
 }

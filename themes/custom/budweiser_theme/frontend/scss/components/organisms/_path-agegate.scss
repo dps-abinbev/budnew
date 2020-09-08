@@ -6,51 +6,36 @@
   #page-wrapper {
     #page {
       #main-wrapper {
-        display: flex;
-        align-items: flex-end;
-        background: transparent;
-        @include mq(md) {
-          min-height: 500px;
-        }
-        @include mq(xlg) {
-          min-height: 650px;
-        }
-        .main-content {
-          @include mq(md) {
-            min-height: 500px;
-            max-height: 500px;
-          }
-        }
+        background-image: url("../images/banners/1_REGISTRO.jpg");
+        background-size: cover;
+        background-size: 100%;
+        min-height: 500px;
+        background-repeat: no-repeat;
         section {
-          max-width: 570px;
+          max-width: 870px;
           margin: 0 auto;
           .block-page-title-block {
             display: none;
           }
           .agegate-form {
-            @extend %bg-age;
-            margin: rem(150px) 0 22px;
             padding: 0 0 rem(1px) 0;
-            border-radius: $border-radio-base;
+            margin: 23rem auto 1rem;
             @include mq(md) {
-              margin: rem(120px) 0;
             }
             .block-title {
-              background-color: $green-opacity;
               display: flex;
               justify-content: center;
               padding: 5px 10px;
-              border-radius: $border-radio-base $border-radio-base 0 0;
               @include mq(md) {
                 padding: 5px 40px;
               }
               h2 {
-                font-size: 25px;
                 letter-spacing: 1px;
                 line-height: 1;
                 padding-top: 3px;
+                text-align: center;
+                text-transform: uppercase;
                 @include mq(md) {
-                  font-size: 35px;
                 }
               }
             }
@@ -58,7 +43,7 @@
               p {
                 text-align: center;
                 margin: 17px auto 0;
-                color: $secundary;
+                @include textCommun(17px);
               }
             }
             .form-group {
@@ -70,10 +55,9 @@
                   margin: 0 1px;
                   min-width: 70px;
                   padding: 0 7px;
-
                   position: relative;
                   @include mq(md) {
-                    min-width: 120px;
+                    min-width: 91px;
                   }
                   .form-type-number {
                     max-width: 83px;
@@ -86,17 +70,18 @@
                     text-align: center;
                     width: 100%;
                     line-height: 1;
+                    color: $white;
                   }
                   input {
-                    border-radius: 20px;
+                    border-radius: 0;
                     text-align: center;
-                    min-width: 82px;
+                    height: 91px;
+                    @include textCommun(80px);
+                    color: $white;
+                    padding: 0;
                   }
                 }
               }
-            }
-            #edit-submit {
-              border-radius: 20px;
             }
             .block-labels {
               display: none;
@@ -110,10 +95,11 @@
                 justify-content: center;
                 padding: 3px 0 !important;
                 label {
-                  color: $secundary;
+                  color: $text-gray;
                   font-size: $font-small;
                   padding-left: 0;
                   letter-spacing: 1px;
+                  text-transform: initial;
                 }
               }
               .recordar-datos {
@@ -124,10 +110,19 @@
               flex-direction: column;
               justify-content: center;
               align-items: center;
+              p {
+                color: $text-gray;
+                font-size: 12px;
+                text-transform: initial;
+                max-width: 61%;
+                a {
+                  color: $primary;
+                }
+              }
               #edit-submit {
+                color: $white;
                 max-width: 140px;
-                margin: 5px 0 0;
-                width: 140px;
+                margin: 30px 0 0;
               }
             }
           }
@@ -161,26 +156,6 @@
             border: 0;
             color: $secundary;
             letter-spacing: 1px;
-          }
-          .checkbox {
-            .custom-control-input:checked ~ .custom-control-label {
-              &:after {
-                left: -18px;
-                top: 6px;
-                width: 5px;
-                height: 10px;
-                border: solid $primary;
-                border-width: 0 3px 3px 0;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-              }
-            }
-          }
-          .custom-control-label {
-            &:before {
-              background-color: $secundary;
-            }
           }
         }
       }
