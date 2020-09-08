@@ -1,0 +1,25 @@
+.path-user,
+.page-user-register {
+  .alert {
+    margin-top: 10px;
+    &-danger {
+      background-color: transparent;
+      border-color: $primary;
+      border: 2px solid $primary;
+      color: $white;
+      em{
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      hr{
+        border-top-color: $primary;
+      }
+      &::before {
+        display: none;
+      }
+    }
+    &-dismissible .close {
+      opacity: 1;
+    }
+  }
+}
