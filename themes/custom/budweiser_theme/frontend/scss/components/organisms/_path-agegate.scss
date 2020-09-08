@@ -18,8 +18,9 @@
           }
           .agegate-form {
             padding: 0 0 rem(1px) 0;
-            margin: 23rem auto 2rem;
+            margin: 22% auto 2rem;
             @include mq(md) {
+              margin: 23rem auto 2rem;
             }
             .block-title {
               display: flex;
@@ -34,7 +35,9 @@
                 padding-top: 3px;
                 text-align: center;
                 text-transform: uppercase;
+                font-size: 15px;
                 @include mq(md) {
+                  font-size: 37px;
                 }
               }
             }
@@ -42,7 +45,11 @@
               p {
                 text-align: center;
                 margin: 17px auto 0;
-                @include textCommun(17px);
+                @include textCommun(12px);
+                letter-spacing: 1px;
+                @include mq(md) {
+                  font-size: 17px;
+                }
               }
             }
             .form-group {
@@ -111,9 +118,13 @@
               align-items: center;
               p {
                 color: $text-gray;
-                font-size: 12px;
+                font-size: 10px;
                 text-transform: initial;
-                max-width: 61%;
+                max-width: 90%;
+                @include mq(md) {
+                  font-size: 12px;
+                  max-width: 61%;
+                }
                 a {
                   color: $primary;
                 }
