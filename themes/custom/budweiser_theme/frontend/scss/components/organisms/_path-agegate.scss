@@ -92,7 +92,7 @@
                     }
                     &::placeholder {
                       color: $text-gray !important;
-                      @include textCommun(30px);
+                      @include textCommun(31px);
                       @include mq(md) {
                         @include textCommun(60px);
                       }
