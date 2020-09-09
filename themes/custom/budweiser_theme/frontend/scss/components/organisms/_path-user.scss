@@ -1,4 +1,5 @@
 .path-user,
+.path-recover-password,
 .page-user-register {
   #main-wrapper {
     .main-content {
@@ -12,6 +13,7 @@
           margin-top: 52px;
           @include mq(md) {
             transform: scale(1);
+            margin-top: 0;
           }
         }
         p {
@@ -37,18 +39,20 @@
         background-size: cover;
         background-size: 100%;
         background-repeat: no-repeat;
-        .field--name-field-tipo-de-documento {
-          width: 35%;
-          margin-right: 2%;
-          display: inline-block;
-          vertical-align: top;
-          margin-bottom: 0.4rem;
-        }
-        .field--name-field-numero-de-identificacion- {
-          width: 61%;
-          margin-left: 1%;
-          display: inline-block;
-          margin-bottom: 0.4rem;
+        @include mq(md) {
+          .field--name-field-tipo-de-documento {
+            width: 35%;
+            margin-right: 2.9%;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 0.4rem;
+
+          }
+          .field--name-field-identificacion {
+            width: 61%;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+          }
         }
         .field--name-field-ciudad {
           clear: both;
