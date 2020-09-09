@@ -32,7 +32,6 @@ input {
     &::checked {
       background: cyan;
       font-family: $bud;
-
     }
   }
   &[type="email"] {
@@ -227,4 +226,9 @@ input[type="number"] {
   background-color: $primary;
   height: auto;
   font-family: $bud;
+}
+.field--widget-options-select {
+  label {
+    margin-bottom: 5px;
+  }
 }
