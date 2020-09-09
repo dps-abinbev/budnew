@@ -89,6 +89,12 @@
 }
 .page-user-password,
 .path-recover-password {
+	.title{
+		display: none;
+	}
+	#edit-description{
+		display: none;
+	}
 	#main-wrapper {
 		.tabs {
 			display: none;
