@@ -20,13 +20,19 @@ input {
     background-color: $primary-light;
     border-radius: 0;
     color: black;
-    border: 0px;
     font-family: $bud;
-    font-size: 18px;
-    letter-spacing: 2px;
+    border: 0px;
     &:focus {
       background-color: $primary-light;
       color: black;
+    }
+    &:hover {
+      font-family: $bud;
+    }
+    &::checked {
+      background: cyan;
+      font-family: $bud;
+
     }
   }
   &[type="email"] {
@@ -134,10 +140,10 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: $primary;
+  -webkit-text-fill-color: $black;
+  font-family: $bud;
   -webkit-box-shadow: 0 0 0px 1000px $primary inset;
   transition: background-color 5000s ease-in-out 0s;
-  font-weight: 500;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -167,7 +173,7 @@ input[type="number"] {
   }
 }
 .custom-control-label::after {
-  background-color: $primary-light;
+  background-color: $primary;
   border-radius: 50%;
 }
 
@@ -221,6 +227,4 @@ input[type="number"] {
   background-color: $primary;
   height: auto;
   font-family: $bud;
-  font-size: 18px;
-  letter-spacing: 2px;
 }

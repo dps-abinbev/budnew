@@ -85,6 +85,18 @@
                     @include textCommun(80px);
                     color: $white;
                     padding: 0;
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus {
+                      -webkit-text-fill-color: $white;
+                    }
+                    &::placeholder {
+                      color: $text-gray !important;
+                      @include textCommun(30px);
+                      @include mq(md) {
+                        @include textCommun(60px);
+                      }
+                    }
                   }
                 }
               }
