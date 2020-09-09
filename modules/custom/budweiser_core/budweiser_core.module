@@ -31,6 +31,9 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
     unset($form['mail']);
     $form['actions']['submit']['#value'] = new TranslatableMarkup('RECUPERAR CONTRASEÑA');
   }elseif($form_id == 'user_register_form'){
+    $form['account']['name']['#access'] = FALSE;
+    $form['account']['name']['#required'] = FALSE;
+    array_unshift($form['#validate'], '_budweiser_core_user_register_validate_form');
     $form['actions']['submit']['#value'] = new TranslatableMarkup('REGISTRARME');
   }
 }
@@ -40,4 +43,10 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
  */
 function budweiser_core_local_tasks_alter(&$local_tasks) {
   unset($local_tasks['user.pass']);
+}
+
+//Custom Functions
+function _budweiser_core_user_register_validate_form($form, FormStateInterface $formState){
+  $mail = $formState->getValue('mail');
+  $formState->setValue('name', $mail);
 }
