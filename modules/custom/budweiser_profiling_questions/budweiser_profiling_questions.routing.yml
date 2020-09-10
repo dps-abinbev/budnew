@@ -1,0 +1,7 @@
+budweiser_profiling_questions.multistepform:
+  path: '/perfilando-jugador/preguntas'
+  defaults:
+    _title: 'Preguntas de perfil de jugador'
+    _form: 'Drupal\budweiser_profiling_questions\Form\MultiStepForm'
+  requirements:
+    _permission: 'access content'
