@@ -84,23 +84,7 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     ],
   ];
   $variables['page']['#attached']['html_head'][] = [$http_equiv, 'http-equiv'];
-  $node = \Drupal::routeMatch()->getParameter('node');
-//  if($node && $node->hasField('field_background_desktop')){
-//    $background_desktop = $node->get('field_background_desktop')->getValue();
-//    if(count($background_desktop) > 0){
-//      $file = \Drupal::entityTypeManager()
-//        ->getStorage('file')
-//        ->load($background_desktop[0]['target_id']);
-////      kint($file->url());
-//    }
-//  }
-//  if($node && $node->hasField('field_background_mobile')){
-//    $mobile_desktop = $node->get('field_background_mobile')->getValue();
-//  }
-  if($node && $node->hasField('field_classes_css')){
-    $classes = $node->get('field_classes_css')->getValue();
-    $variables['attributes']['class'][] = $classes[0]['value'];
-  }
+
 }
 
 /**
@@ -401,17 +385,19 @@ function bootstrap_barrio_preprocess_form_element(&$variables) {
   if (isset($variables['element']['#attributes'])) {
     $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
   }
-  switch ($variables['type']) {
-    case 'checkbox':
-      $variables['customtype'] = theme_get_setting('bootstrap_barrio_checkbox');
-      break;
+  if (isset($variables['type'])) {
+    switch ($variables['type']) {
+      case 'checkbox':
+        $variables['customtype'] = theme_get_setting('bootstrap_barrio_checkbox');
+        break;
 
-    case 'radio':
-      $variables['customtype'] = theme_get_setting('bootstrap_barrio_radio');
-      break;
+      case 'radio':
+        $variables['customtype'] = theme_get_setting('bootstrap_barrio_radio');
+        break;
 
-    default:
-      break;
+      default:
+        break;
+    }
   }
 }
 
