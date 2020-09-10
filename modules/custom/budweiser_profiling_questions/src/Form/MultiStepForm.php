@@ -82,6 +82,7 @@ class MultiStepForm extends FormBase {
 //      '#required' => TRUE,
       '#options' => $options,
       '#default_value' => key($options),
+      '#validated' => TRUE,
     ];
 
     $form['actions'] = [
@@ -124,7 +125,7 @@ class MultiStepForm extends FormBase {
           'status' => 1,
           'created' => \Drupal::time()->getRequestTime(),
         ];
-        $query->values($record);
+        $query->values($value);
       }
       $query->execute();
       unset($_SESSION['store_answers']);
