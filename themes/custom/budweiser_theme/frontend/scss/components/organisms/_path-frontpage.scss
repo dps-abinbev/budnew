@@ -1,11 +1,86 @@
 .path-frontpage {
-  .main-content {
-    section {
-      @extend %bg-home;
-      #block-tomatelabacana {
+  .block-system-main-block {
+    background-image: url("../images/bg/fondo-register.png");
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    @include mq(md) {
+      .field--name-field-tipo-de-documento {
+        width: 35%;
+        margin-right: 2.9%;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0.4rem;
+      }
+      .field--name-field-identificacion {
+        width: 61%;
+        display: inline-block;
+        margin-bottom: 0.4rem;
+      }
+    }
+    .field--name-field-ciudad {
+      clear: both;
+    }
+    .content {
+      max-width: 90%;
+      margin: 0 auto 2rem;
+      @include mq(md) {
+        max-width: 450px;
       }
     }
   }
-  .view-sliders .view-content .slide__constrained .slide__caption {
+}
+
+#block-banneruser {
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    transform: scale(2);
+    margin-top: 52px;
+    @include mq(md) {
+      transform: scale(1);
+      margin-top: 0;
+    }
+  }
+  p {
+    text-align: center;
+    font-weight: 400;
+    font-family: $bud;
+    text-transform: uppercase;
+    color: $white;
+    @include mq(md) {
+      font-size: 36px;
+      position: absolute;
+      bottom: 66px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 40%;
+    }
+  }
+}
+.block-system-main-block {
+  background-image: url("../images/bg/fondo-register.png");
+  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @include mq(md) {
+    .field--name-field-tipo-de-documento {
+      width: 35%;
+      margin-right: 2.9%;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 0.4rem;
+    }
+    .field--name-field-identificacion {
+      width: 61%;
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+  }
+  .field--name-field-ciudad {
+    clear: both;
   }
 }
