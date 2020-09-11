@@ -44,6 +44,7 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
  */
 function budweiser_core_local_tasks_alter(&$local_tasks) {
   unset($local_tasks['user.pass']);
+  unset($local_tasks['user.login']);
 }
 
 /**

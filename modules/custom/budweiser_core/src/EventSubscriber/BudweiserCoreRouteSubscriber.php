@@ -17,6 +17,10 @@ class BudweiserCoreRouteSubscriber extends RouteSubscriberBase {
     $route = $collection->get('user.pass');
     $route->setPath('/recover-password');
     $collection->add('user.pass', $route);
+
+    $route_register = $collection->get('user.register');
+    $route_register->setPath('/bud-futbol');
+    $collection->add('user.register', $route_register);
   }
 
 }
