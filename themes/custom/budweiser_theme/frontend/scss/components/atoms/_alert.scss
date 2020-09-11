@@ -2,12 +2,13 @@
 .alert {
   margin-top: 10px;
   &-danger {
-    background-color: transparent;
+    background-color: transparent !important;
     border-color: $primary;
     border: 2px solid $primary;
-    color: $white;
+    color: $white !important;
     font-family: $bud;
     letter-spacing: 1px;
+    border-left: $primary 2px solid !important;
     a {
       font-family: $bud;
       letter-spacing: 1px;
