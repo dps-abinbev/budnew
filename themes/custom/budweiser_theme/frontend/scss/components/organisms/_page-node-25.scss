@@ -1,0 +1,39 @@
+body {
+  &.page-thank {
+    #page-wrapper {
+      #page {
+        #main-wrapper {
+          background-image: url("../images/banners/1_REGISTRO.jpg");
+          background-size: cover;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          min-height: 193px;
+          @include mq(md) {
+            min-height: 493px;
+          }
+        }
+      }
+      .field--name-body {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 19%;
+        flex-direction: column;
+        h2 {
+          display: none;
+        }
+        h3 {
+          @include textCommun(12px);
+          text-align: center;
+          margin-top: 3%;
+          @include mq(md) {
+            font-size: 35px;
+          }
+        }
+        p {
+        }
+      }
+    }
+  }
+}
