@@ -8,6 +8,9 @@ body {
           background-size: 100%;
           background-repeat: no-repeat;
           min-height: 193px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           @include mq(md) {
             min-height: 493px;
           }
@@ -18,15 +21,19 @@ body {
         align-content: center;
         align-items: center;
         justify-content: center;
-        margin-top: 19%;
         flex-direction: column;
+        background-image: initial;
+        margin: 0 auto;
+          @include mq(md) {
+            width: 600px;
+          }
         h2 {
           display: none;
         }
         h3 {
           @include textCommun(12px);
           text-align: center;
-          margin-top: 3%;
+          margin-top: 24%;
           @include mq(md) {
             font-size: 35px;
           }
