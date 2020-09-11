@@ -21,7 +21,7 @@
       border-top-color: $primary;
     }
     &::before {
-      display: none;
+      display: none !important;
     }
   }
   &-dismissible .close {
