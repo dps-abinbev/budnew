@@ -9,6 +9,9 @@ label {
 small {
   display: none;
 }
+.password-confirm-message {
+  display: none;
+}
 input {
   &[type="*"] {
     @extend [type="number"];
@@ -60,6 +63,9 @@ input {
     display: none; /*solo se esconde para tener un campo personalisado*/
   }
 }
+.form-group{
+  margin-bottom: 0;
+}
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus,
@@ -74,9 +80,10 @@ input {
   display: none;
 }
 .password-suggestions{
+  font-size: 13px;
   ul{
     li{
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 }
@@ -186,7 +193,6 @@ input[type="number"] {
   background-color: $primary;
   border-radius: 50%;
 }
-
 .error {
   color: $primary;
 }

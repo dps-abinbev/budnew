@@ -1,31 +1,31 @@
-.path-user,
-.page-user-register {
-  .alert {
-    margin-top: 10px;
-    &-danger {
-      background-color: transparent;
-      border-color: $primary;
-      border: 2px solid $primary;
-      color: $white;
+
+.alert {
+  margin-top: 10px;
+  &-danger {
+    background-color: transparent !important;
+    border-color: $primary;
+    border: 2px solid $primary;
+    color: $white !important;
+    font-family: $bud;
+    letter-spacing: 1px;
+    border-left: $primary 2px solid !important;
+    a {
       font-family: $bud;
       letter-spacing: 1px;
-      a {
-        font-family: $bud;
-        letter-spacing: 1px;
-      }
-      em {
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-      hr {
-        border-top-color: $primary;
-      }
-      &::before {
-        display: none;
-      }
     }
-    &-dismissible .close {
-      opacity: 1;
+    em {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    hr {
+      border-top-color: $primary;
+    }
+    &::before {
+      display: none !important;
     }
   }
+  &-dismissible .close {
+    opacity: 1;
+  }
 }
+

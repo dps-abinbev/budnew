@@ -105,11 +105,12 @@
           max-width: 450px;
         }
       }
-      .user-login-form {
-        .form-type-password {
-          margin-bottom: 1rem;
-        }
-      }
     }
+  }
+}
+.path-recover-password,
+.page-user-login{
+  .form-group{
+    margin-bottom: 1rem;
   }
 }
