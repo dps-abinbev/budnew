@@ -71,27 +71,160 @@ class AgegateForm extends FormBase
     $form['row-1'] = array(
       '#type' => 'container'
     );
-    $form['row-1']['header'] = array(
-      '#markup' => '<p>Ingresa tu fecha de nacimiento.</p>',
+//    $form['row-1']['header'] = array(
+//      '#markup' => '<p>Ingresa tu fecha de nacimiento.</p>',
+//    );
+    $form['row-1']['sectionYear'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('tab')),
     );
-    $form['row-1']['row-2'] = array(
-      '#type' => 'container'
+
+    $form['row-1']['sectionYear']['header'] = array(
+      '#markup' => '<p>Ingresa tu año de nacimiento.</p>',
     );
+
+    $form['row-1']['sectionYear']['year1'] = [
+      '#type' => 'number',
+      '#placeholder' => 'A',
+      '#required' => true,
+      '#pattern' => '[1-2]*',
+      '#min' => 1,
+      '#max' => 2,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('A'),
+        'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      ),
+    ];
+    $form['row-1']['sectionYear']['year2'] = [
+      '#type' => 'number',
+      '#placeholder' => 'A',
+      '#required' => true,
+      '#pattern' => '[0-9]*',
+      '#min' => 0,
+      '#max' => 9,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('A'),
+        'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      ),
+    ];
+    $form['row-1']['sectionYear']['year3'] = [
+      '#type' => 'number',
+      '#placeholder' => 'A',
+      '#required' => true,
+      '#pattern' => '[0-9]*',
+      '#min' => 0,
+      '#max' => 9,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('A'),
+        'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      ),
+    ];
+    $form['row-1']['sectionYear']['year4'] = [
+      '#type' => 'number',
+      '#placeholder' => 'A',
+      '#required' => true,
+      '#pattern' => '[0-9]*',
+      '#min' => 0,
+      '#max' => 9,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('A'),
+        'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      ),
+    ];
+
+    $form['row-1']['sectionMonth'] = [
+      '#type' => 'container',
+      '#attributes' => array('class' => array('tab')),
+    ];
+
+    $form['row-1']['sectionMonth']['header'] = [
+      '#markup' => '<p>Ingresa tu mes de nacimiento</p>',
+    ];
+    $form['row-1']['sectionMonth']['month1'] = [
+    '#type' => 'number',
+    '#placeholder' => 'M',
+    '#required' => TRUE,
+    '#pattern' => '[0-1]*',
+    //      '#default_value' => $month,
+    '#min' => 0,
+    '#max' => 1,
+    '#attributes' => array(
+      'maxlength' => 1,
+      'placeholder' => $this->t('M'),
+      'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
+    ),
+  ];
+    $form['row-1']['sectionMonth']['month2'] = [
+      '#type' => 'number',
+      '#placeholder' => 'M',
+      '#required' => TRUE,
+      '#pattern' => '[0-9]*',
+      //      '#default_value' => $month,
+      '#min' => 0,
+      '#max' => 9,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('M'),
+        'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
+      ),
+    ];
+
+    $form['row-1']['sectionDay'] = [
+      '#type' => 'container',
+      '#attributes' => array('class' => array('tab')),
+    ];
+    $form['row-1']['sectionDay']['header'] = [
+      '#markup' => '<p>Ingresa tu día de nacimiento</p>',
+    ];
+    $form['row-1']['sectionDay']['day1'] = [
+      //'#title' => $this->t('Día'),
+      '#type' => 'number',
+      '#placeholder' => 'D',
+      '#required' => TRUE,
+      '#pattern' => '[0-3]*',
+//      '#default_value' => $day,
+      '#min' => 0,
+      '#max' => 3,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('D'),
+        'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
+      ),
+    ];
+    $form['row-1']['sectionDay']['day2'] = [
+      //'#title' => $this->t('Día'),
+      '#type' => 'number',
+      '#placeholder' => 'D',
+      '#required' => TRUE,
+      '#pattern' => '[0-9]*',
+      //      '#default_value' => $day,
+      '#min' => 0,
+      '#max' => 9,
+      '#attributes' => array(
+        'maxlength' => 1,
+        'placeholder' => $this->t('D'),
+        'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
+      ),
+    ];
 
     $form['row-2-1'] = array(
       '#type' => 'container'
     );
 
-    $form['row-2-1'] = array(
-      '#type' => 'markup',
-      '#markup' => '<div class="block-labels">
-            <div class="row">
-              <div class="col-4 col-sm"><p class="dd">Día</p></div>
-              <div class="col-4 col-sm"><p class="mm">Mes</p></div>
-              <div class="col-4 col-sm"><p class="yy">Año</p></div>
-            </div>
-          </div>'
-    );
+//    $form['row-2-1'] = array(
+//      '#type' => 'markup',
+//      '#markup' => '<div class="block-labels">
+//            <div class="row">
+//              <div class="col-4 col-sm"><p class="dd">Día</p></div>
+//              <div class="col-4 col-sm"><p class="mm">Mes</p></div>
+//              <div class="col-4 col-sm"><p class="yy">Año</p></div>
+//            </div>
+//          </div>'
+//    );
 
     $form['row-2-2'] = array(
       '#type' => 'container'
@@ -110,51 +243,6 @@ class AgegateForm extends FormBase
     $form['row-4'] = array(
       '#type' => 'container'
     );
-
-    $form['row-1']['row-2']['day'] = [
-      //'#title' => $this->t('Día'),
-      '#type' => 'number',
-      '#placeholder' => '00',
-      '#required' => TRUE,
-      '#pattern' => '[0-9]*',
-      '#default_value' => $day,
-      '#min' => 1,
-      '#max' => 31,
-      '#attributes' => array(
-        'maxlength' => 2,
-        'placeholder' => $this->t('día'),
-        'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
-      ),
-    ];
-
-    $form['row-1']['row-2']['month'] = [
-      '#type' => 'number',
-      '#placeholder' => '00',
-      '#required' => TRUE,
-      '#pattern' => '[0-9]*',
-      '#default_value' => $month,
-      '#min' => 1,
-      '#max' => 12,
-      '#attributes' => array(
-        'maxlength' => 2,
-        'placeholder' => $this->t('mes'),
-        'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
-      ),
-    ];
-
-    $form['row-1']['row-2']['year'] = [
-      '#type' => 'number',
-      '#placeholder' => '0000',
-      '#required' => true,
-      '#pattern' => '[0-9]*',
-      '#min' => 1920,
-      '#max' => date('Y'),
-      '#attributes' => array(
-        'maxlength' => 4,
-        'placeholder' => $this->t('año'),
-        'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-      ),
-    ];
 
     $form['row-1']['row-3']['remember'] = [
       '#type' => 'checkbox',
@@ -229,16 +317,32 @@ class AgegateForm extends FormBase
   /**
    * {@inheritdoc}
    */
-  /*public function validateForm(array &$form, FormStateInterface $form_state)
+  public function validateForm(array &$form, FormStateInterface $form_state)
   {
       $config = $this->config('agegate.settings');
       $form_values = $form_state->getValues();
 
       $dob = array();
 
-      $dob['year'] = $form_values['year'];
-      $dob['month'] = $form_values['month'];
-      $dob['day'] = $form_values['day'];
+      $dob['year'] = $form_values['year1'].$form_values['year2'].$form_values['year3'].$form_values['year4'];
+      $dob['month'] = $form_values['month1'].$form_values['month2'];
+      $dob['day'] = $form_values['day1'].$form_values['day2'];
+
+      if((int)$dob['year'] <= 1900 || (int)$dob['year'] >= 2100){
+        $form_state->setErrorByName('year1');
+        $form_state->setErrorByName('year2');
+        $form_state->setErrorByName('year3');
+        $form_state->setErrorByName('year4', $this->t('El año es incorrecto'));
+      }
+
+    if((int)$dob['month'] < 0 || (int)$dob['month'] > 12){
+      $form_state->setErrorByName('month1');
+      $form_state->setErrorByName('month2', $this->t('El mes es incorrecto'));
+    }
+    if((int)$dob['day'] < 0 || (int)$dob['day'] > 31){
+      $form_state->setErrorByName('day1');
+      $form_state->setErrorByName('day2', $this->t('El día es incorrecto'));
+    }
 
       $date = $dob['year'] . '-' . $dob['month'] . '-' . $dob['day'];
       //$date = $dob['year'] . '-' . $dob['month'] . '-' . '01';
@@ -279,7 +383,7 @@ class AgegateForm extends FormBase
       // if (!empty($form_values['confirmation']) && $form_values['confirmation'] != 1) {
       //   $form_state->setErrorByName('confirmation', t('You need to confirm your age.'));
       // }
-  }*/
+  }
 
   /**
    * {@inheritdoc}
@@ -292,9 +396,9 @@ class AgegateForm extends FormBase
 
     $dob = array();
 
-    $dob['year'] = $form_values['year'];
-    $dob['month'] = $form_values['month'];
-    $dob['day'] = $form_values['day'];
+    $dob['year'] = $form_values['year1'].$form_values['year2'].$form_values['year3'].$form_values['year4'];
+    $dob['month'] = $form_values['month1'].$form_values['month2'];
+    $dob['day'] = $form_values['day1'].$form_values['day2'];
 
     $date = $dob['year'] . '-' . $dob['month'] . '-' . $dob['day'];
     //$date = $dob['year'] . '-' . $dob['month'] . '-' . '01';
