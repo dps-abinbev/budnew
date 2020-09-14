@@ -63,7 +63,7 @@ input {
     display: none; /*solo se esconde para tener un campo personalisado*/
   }
 }
-.form-group{
+.form-group {
   margin-bottom: 0;
 }
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -76,13 +76,13 @@ input {
   box-shadow: none;
 }
 .password-strength__meter,
-.password-strength{
+.password-strength {
   display: none;
 }
-.password-suggestions{
+.password-suggestions {
   font-size: 13px;
-  ul{
-    li{
+  ul {
+    li {
       font-size: 13px;
     }
   }
@@ -123,6 +123,7 @@ select.error {
 
 input {
   &.error {
+    border: 2px solid white;
     + label {
       &::before {
       }
@@ -194,7 +195,9 @@ input[type="number"] {
   border-radius: 50%;
 }
 .error {
-  color: $primary;
+  color: $white;
+  font-size: 13px;
+  text-transform: initial;
 }
 .checkbox {
   .custom-control-input:checked ~ .custom-control-label {
