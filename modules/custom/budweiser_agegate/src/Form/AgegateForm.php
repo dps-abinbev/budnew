@@ -67,28 +67,32 @@ class AgegateForm extends FormBase
       '#weight' => 0
     );
 
-
-    $form['row-1'] = array(
+    $form['row-1']= array(
       '#type' => 'container'
     );
-//    $form['row-1']['header'] = array(
+
+    $form['row-1']['row-1-2']= array(
+      '#type' => 'container'
+    );
+
+//    $form['row-1']['row-1-2']['header'] = array(
 //      '#markup' => '<p>Ingresa tu fecha de nacimiento.</p>',
 //    );
-    $form['row-1']['sectionYear'] = array(
+    $form['row-1']['row-1-2']['sectionYear'] = array(
       '#type' => 'container',
       '#attributes' => array('class' => array('tab')),
     );
 
-    $form['row-1']['sectionYear']['header'] = array(
+    $form['row-1']['row-1-2']['sectionYear']['header'] = array(
       '#markup' => '<p>Ingresa tu año de nacimiento.</p>',
       '#prefix' => '<div class="header">',
       '#suffix' => '</div>',
     );
-    $form['row-1']['sectionYear']['year'] = [
+    $form['row-1']['row-1-2']['sectionYear']['year'] = [
       '#prefix' => '<div class="field-content">',
       '#suffix' => '</div>',
     ];
-    $form['row-1']['sectionYear']['year']['year1'] = [
+    $form['row-1']['row-1-2']['sectionYear']['year']['year1'] = [
       '#type' => 'number',
       '#placeholder' => 'A',
       '#required' => true,
@@ -101,7 +105,7 @@ class AgegateForm extends FormBase
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
     ];
-    $form['row-1']['sectionYear']['year']['year2'] = [
+    $form['row-1']['row-1-2']['sectionYear']['year']['year2'] = [
       '#type' => 'number',
       '#placeholder' => 'A',
       '#required' => true,
@@ -114,7 +118,7 @@ class AgegateForm extends FormBase
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
     ];
-    $form['row-1']['sectionYear']['year']['year3'] = [
+    $form['row-1']['row-1-2']['sectionYear']['year']['year3'] = [
       '#type' => 'number',
       '#placeholder' => 'A',
       '#required' => true,
@@ -127,7 +131,7 @@ class AgegateForm extends FormBase
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
     ];
-    $form['row-1']['sectionYear']['year']['year4'] = [
+    $form['row-1']['row-1-2']['sectionYear']['year']['year4'] = [
       '#type' => 'number',
       '#placeholder' => 'A',
       '#required' => true,
@@ -141,21 +145,21 @@ class AgegateForm extends FormBase
       ),
     ];
 
-    $form['row-1']['sectionMonth'] = [
+    $form['row-1']['row-1-2']['sectionMonth'] = [
       '#type' => 'container',
       '#attributes' => array('class' => array('tab')),
     ];
 
-    $form['row-1']['sectionMonth']['header'] = [
+    $form['row-1']['row-1-2']['sectionMonth']['header'] = [
       '#markup' => '<p>Ingresa tu mes de nacimiento</p>',
       '#prefix' => '<div class="header">',
       '#suffix' => '</div>',
     ];
-    $form['row-1']['sectionMonth']['month'] = [
+    $form['row-1']['row-1-2']['sectionMonth']['month'] = [
       '#prefix' => '<div class="field-content">',
       '#suffix' => '</div>',
     ];
-    $form['row-1']['sectionMonth']['month']['month1'] = [
+    $form['row-1']['row-1-2']['sectionMonth']['month']['month1'] = [
     '#type' => 'number',
     '#placeholder' => 'M',
     '#required' => TRUE,
@@ -169,7 +173,7 @@ class AgegateForm extends FormBase
       'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
     ),
   ];
-    $form['row-1']['sectionMonth']['month']['month2'] = [
+    $form['row-1']['row-1-2']['sectionMonth']['month']['month2'] = [
       '#type' => 'number',
       '#placeholder' => 'M',
       '#required' => TRUE,
@@ -184,20 +188,20 @@ class AgegateForm extends FormBase
       ),
     ];
 
-    $form['row-1']['sectionDay'] = [
+    $form['row-1']['row-1-2']['sectionDay'] = [
       '#type' => 'container',
       '#attributes' => array('class' => array('tab')),
     ];
-    $form['row-1']['sectionDay']['header'] = [
+    $form['row-1']['row-1-2']['sectionDay']['header'] = [
       '#markup' => '<p>Ingresa tu día de nacimiento</p>',
       '#prefix' => '<div class="header">',
       '#suffix' => '</div>',
     ];
-    $form['row-1']['sectionDay']['day'] = [
+    $form['row-1']['row-1-2']['sectionDay']['day'] = [
       '#prefix' => '<div class="field-content">',
       '#suffix' => '</div>',
     ];
-    $form['row-1']['sectionDay']['day']['day1'] = [
+    $form['row-1']['row-1-2']['sectionDay']['day']['day1'] = [
       //'#title' => $this->t('Día'),
       '#type' => 'number',
       '#placeholder' => 'D',
@@ -212,7 +216,7 @@ class AgegateForm extends FormBase
         'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
       ),
     ];
-    $form['row-1']['sectionDay']['day']['day2'] = [
+    $form['row-1']['row-1-2']['sectionDay']['day']['day2'] = [
       //'#title' => $this->t('Día'),
       '#type' => 'number',
       '#placeholder' => 'D',
@@ -228,9 +232,9 @@ class AgegateForm extends FormBase
       ),
     ];
 
-    $form['row-2-1'] = array(
+   /*  $form['row-2-1'] = array(
       '#type' => 'container'
-    );
+    ); */
 
 //    $form['row-2-1'] = array(
 //      '#type' => 'markup',
@@ -254,28 +258,28 @@ class AgegateForm extends FormBase
             </div>'
     );
 
-    $form['row-1']['row-3'] = array(
+    $form['row-3'] = array(
       '#type' => 'container'
     );
     $form['row-4'] = array(
       '#type' => 'container'
     );
 
-    $form['row-1']['row-3']['remember'] = [
+    $form['row-3']['remember'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Recordar mis datos'),
       '#required' => false,
       '#default_value' => $remember,
     ];
 
-    $form['row-1']['row-3']['advertisement'] = [
+    $form['row-3']['advertisement'] = [
       '#markup' => '<p>*No selecciones esta opción si compartes este computador con menores de edad.
        Este sitio web utiliza cookies que se quedarán almacenadas en el computador con el fin de mejorar
        su experiencia. Al proporcionar su fecha de nacimiento, también se acepta el uso de cookies.
        Más información haga clic <a href="">aquí.</a></p>',
     ];
 
-    $form['row-1']['row-3']['submit'] = [
+    $form['row-3']['submit'] = [
       '#type' => 'submit',
       '#value' => t('entrar'),
     ];

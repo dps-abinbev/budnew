@@ -10,6 +10,9 @@
         background-size: cover;
         background-size: 100%;
         background-repeat: no-repeat;
+        .col {
+          padding: 0;
+        }
         section {
           max-width: 870px;
           margin: 0 auto;
@@ -19,6 +22,7 @@
           .agegate-form {
             padding: 0 0 rem(1px) 0;
             margin: 22% auto 2rem;
+
             @include mq(md) {
               margin: 23rem auto 2rem;
             }
@@ -42,13 +46,47 @@
               }
             }
             #edit-row-1 {
-              p {
-                text-align: center;
-                margin: 17px auto 0;
-                @include textCommun(12px);
-                letter-spacing: 1px;
-                @include mq(md) {
-                  font-size: 17px;
+              width: 100%;
+              overflow: hidden;
+              margin: 0 auto;
+              max-width: 320px;
+
+              @include mq(md) {
+              }
+              #edit-row-1-2 {
+                margin: 0 auto;
+                width: 960%;
+                max-width: 960px;
+                margin: 0 auto;
+                &.active {
+                  margin-left: -320px;
+                }
+                &.activemonth {
+                  margin-left: -640px;
+                }
+
+                .tab {
+                  width: 100%;
+                  max-width: 320px;
+                  display: flex;
+                  flex-direction: column;
+                  float: left;
+                  .header {
+                    background-color: initial;
+                  }
+                  .field-content {
+                    display: flex;
+                    justify-content: center;
+                  }
+                }
+                p {
+                  text-align: center;
+                  margin: 17px auto;
+                  @include textCommun(12px);
+                  letter-spacing: 4px;
+                  @include mq(md) {
+                    font-size: 20px;
+                  }
                 }
               }
             }
@@ -59,7 +97,8 @@
                 margin: 20px 0;
                 .js-form-item {
                   margin: 0 1px;
-                  min-width: 70px;
+                  min-width: 60px;
+                  width: 60px;
                   padding: 0 7px;
                   position: relative;
                   @include mq(md) {
@@ -91,10 +130,10 @@
                       -webkit-text-fill-color: $white;
                     }
                     &::placeholder {
-                      color: $text-gray !important;
+                      color: $text-placeholder !important;
                       @include textCommun(31px);
                       @include mq(md) {
-                        @include textCommun(60px);
+                        @include textCommun(81px);
                       }
                     }
                   }
