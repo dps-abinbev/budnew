@@ -1,0 +1,5 @@
+ab_cdp_connector.config:
+  title: Configuration CDP Connector
+  parent: system.admin_config_system
+  route_name: ab_cdp_connector.settings_form
+  weight: 10
