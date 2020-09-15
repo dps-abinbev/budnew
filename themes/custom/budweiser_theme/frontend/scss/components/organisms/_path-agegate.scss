@@ -1,5 +1,4 @@
 .path-agegate {
-  header,
   .breadcrumb {
     display: none;
   }
@@ -7,9 +6,12 @@
     #page {
       #main-wrapper {
         background-image: url("../images/banners/1_REGISTRO.jpg");
-        background-size: cover;
-        background-size: 100%;
+        background-size: 132%;
         background-repeat: no-repeat;
+        background-position-x: 50%;
+        @include mq(md) {
+          background-size: 100%;
+        }
         .col {
           padding: 0;
         }
@@ -21,10 +23,9 @@
           }
           .agegate-form {
             padding: 0 0 rem(1px) 0;
-            margin: 22% auto 2rem;
-
+            margin: 36% auto 2rem;
             @include mq(md) {
-              margin: 23rem auto 2rem;
+              margin: 34rem auto 2rem;
             }
             .block-title {
               display: flex;
@@ -50,38 +51,39 @@
               overflow: hidden;
               margin: 0 auto;
               max-width: 320px;
-
               @include mq(md) {
                 max-width: 400px;
               }
               #edit-row-1-2 {
                 margin: 0 auto;
-                //width: 960%;
                 max-width: 960px;
                 margin: 0 auto;
-                display: block;
+                justify-content: flex-start;
                 @include mq(md) {
                   max-width: 1200px;
                 }
                 &.active {
                   margin-left: -320px;
                   @include mq(md) {
-                    max-width: -400px;
+                    margin-left: -400px;
                   }
                 }
                 &.activemonth {
                   margin-left: -640px;
                   @include mq(md) {
-                    max-width: -800px;
+                    margin-left: -800px;
                   }
                 }
 
                 .tab {
                   width: 100%;
-                  max-width: 320px;
+                  min-width: 320px;
                   display: flex;
                   flex-direction: column;
                   float: left;
+                  @include mq(md) {
+                    min-width: 400px;
+                  }
                   .header {
                     background-color: initial;
                   }
@@ -92,11 +94,12 @@
                 }
                 p {
                   text-align: center;
-                  margin: 17px auto;
+                  margin: 10px auto;
                   @include textCommun(12px);
                   letter-spacing: 4px;
                   @include mq(md) {
                     font-size: 20px;
+                    margin: 10px auto 20px;
                   }
                 }
               }
@@ -105,12 +108,12 @@
               .js-form-wrapper {
                 display: flex;
                 justify-content: center;
-                margin: 20px 0;
+                //margin: 20px 0 0;
                 .js-form-item {
                   margin: 0 1px;
                   min-width: 60px;
                   width: 60px;
-                  padding: 0 7px;
+                  margin: 0 4px;
                   position: relative;
                   @include mq(md) {
                     min-width: 91px;
@@ -131,10 +134,14 @@
                   input {
                     border-radius: 0;
                     text-align: center;
-                    height: 91px;
-                    @include textCommun(80px);
+                    height: 60px;
+                    @include textCommun(31px);
                     color: $white;
                     padding: 0;
+                    @include mq(md) {
+                      height: 91px;
+                      font-size: 81px;
+                    }
                     &:-webkit-autofill,
                     &:-webkit-autofill:hover,
                     &:-webkit-autofill:focus {
