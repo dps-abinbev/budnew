@@ -103,8 +103,18 @@
       $("#user-register-form").validate({
         rules: {
           "field_celular[0][value]": "customphone",
+          "field_terminos[value]": {
+            required: true,
+            maxlength: 2
+          },
           "field_identificacion[0][value]": {
             number: true
+          }
+        },
+        messages: {
+          "field_terminos[value]": {
+            required: "You must check at least 1 box",
+            maxlength: "Check no more than {0} boxes"
           }
         }
       });
