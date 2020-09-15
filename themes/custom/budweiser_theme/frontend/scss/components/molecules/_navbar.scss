@@ -10,11 +10,12 @@
         .nav-link {
           font-size: 17px;
           font-family: $bud;
-          //font-family: $BudCrafted;
           color: $white;
+          text-align: center;
           @include mq(md) {
             font-size: 21px;
             text-transform: uppercase;
+            text-align: initial;
           }
           &:hover,
           &.active {
