@@ -1,0 +1,6 @@
+services:
+  ab_cdp_connector.event_subscriber:
+    class: Drupal\ab_cdp_connector\EventSubscriber\AbCdpConnectorSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
