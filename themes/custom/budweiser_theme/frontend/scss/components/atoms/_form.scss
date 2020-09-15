@@ -117,8 +117,12 @@ input {
 }
 
 //_____
+.custom-select.is-invalid,
 .form-control.is-invalid,
-select.error {
+.was-validated .custom-select:invalid,
+.was-validated .form-control:invalid {
+  border-color: $white;
+  font-size: 1rem;
 }
 
 input {
@@ -193,6 +197,7 @@ input[type="number"] {
 .custom-control-label::after {
   background-color: $primary;
   border-radius: 50%;
+  cursor: pointer;
 }
 .error {
   color: $white;
@@ -244,8 +249,9 @@ input[type="number"] {
   border: none;
   color: black;
   background-color: $primary;
-  height: auto;
+  height: 36px;
   font-family: $bud;
+  font-size: 16px;
 }
 .field--widget-options-select {
   label {

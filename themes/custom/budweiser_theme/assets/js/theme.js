@@ -76,37 +76,38 @@
 (function ($, Drupal) {
   Drupal.behaviors.registry = {
     attach: function attach(context, settings) {
+      jQuery.extend(jQuery.validator.messages, {
+        required: "Campo obligatorio",
+        lettersonly: "Por favor, rellena este campo solo con letras.",
+        remote: "Por favor, rellena este campo.",
+        email: "Por favor, escribe una dirección de correo válida.",
+        url: "Por favor, escribe una URL válida.",
+        date: "Por favor, escribe una fecha válida.",
+        dateITA: "Por favor, escribe una fecha válida.",
+        dateISO: "Por favor, escribe una fecha (ISO) válida.",
+        number: "Por favor, escribe un número válido.",
+        digits: "Por favor, escribe sólo dígitos.",
+        creditcard: "Por favor, escribe un número de tarjeta válido.",
+        equalTo: "Por favor, escribe el mismo valor de nuevo.",
+        extension: "Por favor, escribe un valor con una extensión aceptada.",
+        maxlength: $.validator.format("Por favor, no escribas más de {0} dígitos."),
+        minlength: $.validator.format("Por favor, no escribas menos de {0} dígitos."),
+        rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+        range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+        max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+        min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+      });
       $.validator.addMethod("customphone", function (value, element) {
         return this.optional(element) || /^[3]+[0-9]\d{8}$/g.test(value);
-      }, "Número de celular no  válido");
-      //^[3]+[0-9]\d{8}$/g
-      ///^(3-?)?(\([0-9]\d{2}\)|[0-9]\d{2})-?[0-9]\d{2}-?\d{4}$/
+      }, "Número de celular no es válido");
       $("#user-register-form").validate({
         rules: {
-          "field_celular[0][value]": "customphone"
+          "field_celular[0][value]": "customphone",
+          "field_identificacion[0][value]": {
+            number: true
+          }
         }
       });
-
-      var userRegister = document.querySelector(".user-register-form");
-      //console.log(userRegister);
-
-      /*  if (userRegister.length >0) {
-        console.log("hola ricky ");
-        $(".user-register-form").validate({
-          submitHandler: function (form) {
-            var formId = form.id;
-            if (!Drupal.agegateValidate.submit) {
-            $("#edit-field-celular-0-value").validate({
-              rules: {
-                nomTelefono: "customphone",
-              },
-            });
-            } else {
-              return false;
-            }
-          },
-        });
-      } */
     }
   };
   Drupal.behaviors.ageGateSlide2 = {

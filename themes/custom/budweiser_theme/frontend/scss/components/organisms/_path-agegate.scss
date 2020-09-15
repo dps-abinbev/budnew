@@ -52,17 +52,28 @@
               max-width: 320px;
 
               @include mq(md) {
+                max-width: 400px;
               }
               #edit-row-1-2 {
                 margin: 0 auto;
-                width: 960%;
+                //width: 960%;
                 max-width: 960px;
                 margin: 0 auto;
+                display: block;
+                @include mq(md) {
+                  max-width: 1200px;
+                }
                 &.active {
                   margin-left: -320px;
+                  @include mq(md) {
+                    max-width: -400px;
+                  }
                 }
                 &.activemonth {
                   margin-left: -640px;
+                  @include mq(md) {
+                    max-width: -800px;
+                  }
                 }
 
                 .tab {
