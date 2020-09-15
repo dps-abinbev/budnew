@@ -34,6 +34,7 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
     unset($form['mail']);
     $form['actions']['submit']['#value'] = new TranslatableMarkup('RECUPERAR CONTRASEÑA');
   }elseif($form_id == 'user_register_form'){
+    $form['#attached']['library'][] = 'budweiser_core/budweiser_datalayer';
     $form['account']['name']['#access'] = FALSE;
     $form['account']['name']['#required'] = FALSE;
     array_unshift($form['#validate'], '_budweiser_core_user_register_validate_form');
