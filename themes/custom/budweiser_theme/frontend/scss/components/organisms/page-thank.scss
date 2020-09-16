@@ -7,7 +7,13 @@ body {
             position: relative;
             overflow: hidden;
             @include mq(md) {
-              height: 350px;
+              height: 300px;
+            }
+            @include mq(lg) {
+              height: 400px;
+            }
+             @include mq(xlg) {
+              height: 500px;
             }
             p {
               display: none;
