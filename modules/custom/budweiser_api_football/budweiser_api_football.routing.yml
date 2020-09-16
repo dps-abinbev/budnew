@@ -1,0 +1,7 @@
+budweiser_api_football.settings_form:
+  path: '/admin/config/system/budweiser-api-football'
+  defaults:
+    _title: 'Budweiser Api Football settings'
+    _form: 'Drupal\budweiser_api_football\Form\SettingsForm'
+  requirements:
+    _permission: 'administer budweiser_api_football configuration'

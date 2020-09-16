@@ -1,0 +1,6 @@
+name: Budweiser Api Football
+type: module
+description: This module contains conections and configurations to work with the Api football
+package: Ab InBev
+core: 8.x
+core_version_requirement: ^8 || ^9
