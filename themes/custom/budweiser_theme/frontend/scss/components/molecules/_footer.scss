@@ -22,14 +22,19 @@
       padding: 0;
       #block-footerlegal {
         padding: 5px 0 0;
-        p {
-          //display: none;
+        p{
+          margin: 0;
+        }
+        a {
           color: $white;
           font-size: 11.5px;
           margin: 0;
           font-family: $bud;
           margin-bottom: 0;
           text-align: center;
+          &:hover {
+            text-decoration: none;
+          }
           img {
             max-width: 153px;
           }
