@@ -24,17 +24,17 @@
         padding: 5px 0 0;
         a {
           color: $white;
-          &:hover{
+          font-size: 11.5px;
+          margin: 0;
+          font-family: $bud;
+          margin-bottom: 0;
+          text-align: center;
+          &:hover {
             text-decoration: none;
           }
           p {
             //display: none;
-            color: $white;
-            font-size: 11.5px;
-            margin: 0;
-            font-family: $bud;
-            margin-bottom: 0;
-            text-align: center;
+
             img {
               max-width: 153px;
             }
