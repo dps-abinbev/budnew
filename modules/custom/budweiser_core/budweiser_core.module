@@ -21,8 +21,8 @@ define('LIGA_SANTANDER', 2833);
 function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if($form_id == 'field_config_edit_form' && isset($form['settings']['on_label'])){
     $form['settings']['on_label']['#type'] = 'textarea';
-    $form['settings']['on_label']['#description'] = t('The html is allowed and the maximum length is 500 characters');
-    $form['settings']['on_label']['#maxlength'] = 500;
+    $form['settings']['on_label']['#description'] = t('The html is allowed and the maximum length is 1000 characters');
+    $form['settings']['on_label']['#maxlength'] = 1000;
   }elseif ($form_id == 'user_pass'){
     $form['description'] = [
       '#type' => 'item',
