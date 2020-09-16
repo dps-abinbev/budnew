@@ -21,18 +21,25 @@
       margin: 0;
       padding: 0;
       #block-footerlegal {
-        padding: 7px 0;
-        img {
-          width: 100%;
-        }
+        padding: 5px 0 0;
         p {
-          display: none;
+          //display: none;
+          color: $white;
+          font-size: 11.5px;
+          margin: 0;
+          font-family: $bud;
+          margin-bottom: 0;
+          text-align: center;
+          img {
+            max-width: 153px;
+          }
         }
       }
     }
     .region-footer-third {
       justify-content: center;
       width: 100%;
+      margin: 0;
       #block-infolegal {
         padding: 0;
         margin: 0;
