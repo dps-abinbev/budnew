@@ -401,7 +401,8 @@ class AgegateForm extends FormBase
               $form_state->setErrorByName('dob', t('You need to be @age or over to access the site.', [
                   '@age' => (int) $config->get('agegate_age_limit'),
               ]));
-            return new \Symfony\Component\HttpFoundation\RedirectResponse('https://google.com');
+            _my_goto('https://www.tapintoyourbeer.com');
+//            return new \Symfony\Component\HttpFoundation\RedirectResponse('https://www.tapintoyourbeer.com');
           }
       } else {
           drupal_set_message(t('Debes seleccionar un mes.'), 'error');
