@@ -29,13 +29,18 @@
           display: none;
         }
       }
+    }
+    .region-footer-third {
+      justify-content: center;
+      width: 100%;
       #block-infolegal {
         padding: 0;
         margin: 0;
         p {
           color: $white;
-          font-size: 12px;
+          font-size: 11.5px;
           margin: 0;
+          font-family: $bud;
         }
       }
     }
