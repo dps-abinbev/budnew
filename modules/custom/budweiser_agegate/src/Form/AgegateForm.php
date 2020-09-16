@@ -101,6 +101,7 @@ class AgegateForm extends FormBase
       '#max' => 2,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_year_1',
         'placeholder' => $this->t('A'),
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
@@ -114,6 +115,7 @@ class AgegateForm extends FormBase
       '#max' => 9,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_year_2',
         'placeholder' => $this->t('A'),
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
@@ -127,6 +129,7 @@ class AgegateForm extends FormBase
       '#max' => 9,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_year_3',
         'placeholder' => $this->t('A'),
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
@@ -140,6 +143,7 @@ class AgegateForm extends FormBase
       '#max' => 9,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_year_4',
         'placeholder' => $this->t('A'),
         'oninput' => "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       ),
@@ -169,6 +173,7 @@ class AgegateForm extends FormBase
     '#max' => 1,
     '#attributes' => array(
       'maxlength' => 1,
+      'data-qadp' => 'age_gate_month_1',
       'placeholder' => $this->t('M'),
       'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
     ),
@@ -183,6 +188,7 @@ class AgegateForm extends FormBase
       '#max' => 9,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_month_2',
         'placeholder' => $this->t('M'),
         'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-year").focus();}'
       ),
@@ -212,6 +218,7 @@ class AgegateForm extends FormBase
       '#max' => 3,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_day_1',
         'placeholder' => $this->t('D'),
         'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
       ),
@@ -227,6 +234,7 @@ class AgegateForm extends FormBase
       '#max' => 9,
       '#attributes' => array(
         'maxlength' => 1,
+        'data-qadp' => 'age_gate_day_2',
         'placeholder' => $this->t('D'),
         'oninput' => 'javascript: if (this.value.length >= this.maxLength) {this.value = this.value.slice(0, this.maxLength); document.getElementById("edit-month--2").focus();}'
       ),
@@ -282,6 +290,9 @@ class AgegateForm extends FormBase
     $form['row-3']['submit'] = [
       '#type' => 'submit',
       '#value' => t('entrar'),
+      '#attributes' => array(
+        'data-qadp' => 'button_enter_agegate',
+      ),
     ];
 
     $form['row-4']['legal'] = array(
@@ -390,7 +401,8 @@ class AgegateForm extends FormBase
               $form_state->setErrorByName('dob', t('You need to be @age or over to access the site.', [
                   '@age' => (int) $config->get('agegate_age_limit'),
               ]));
-            return new \Symfony\Component\HttpFoundation\RedirectResponse('https://google.com');
+            _my_goto('https://www.tapintoyourbeer.com');
+//            return new \Symfony\Component\HttpFoundation\RedirectResponse('https://www.tapintoyourbeer.com');
           }
       } else {
           drupal_set_message(t('Debes seleccionar un mes.'), 'error');
