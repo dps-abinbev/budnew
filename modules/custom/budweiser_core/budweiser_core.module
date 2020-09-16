@@ -37,6 +37,8 @@ function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form
     $form['#attached']['library'][] = 'budweiser_core/budweiser_datalayer';
     $form['account']['name']['#access'] = FALSE;
     $form['account']['name']['#required'] = FALSE;
+    $form['#attributes']['data-user-info-from-browser'] = FALSE;
+    $form['account']['mail']['#attributes']['autocomplete'] = 'off';
     array_unshift($form['#validate'], '_budweiser_core_user_register_validate_form');
     $form['actions']['submit']['#value'] = new TranslatableMarkup('REGISTRARME');
   }
