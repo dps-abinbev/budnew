@@ -1,0 +1,61 @@
+body {
+  &.page-thank {
+    #page-wrapper {
+      #page {
+        #main-wrapper {
+          #block-banneruser {
+            position: relative;
+            overflow: hidden;
+            @include mq(md) {
+              height: 300px;
+            }
+            @include mq(lg) {
+              height: 400px;
+            }
+             @include mq(xlg) {
+              height: 500px;
+            }
+            p {
+              display: none;
+            }
+          }
+        }
+        #block-budweiser-theme-content {
+          display: flex;
+          align-content: center;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          background-image: initial;
+          margin-top: -182px;
+          height: 300px;
+          margin: 0 auto;
+          background-image: url("../images/bg/fondo-register.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position-y: 121px;
+          @include mq(md) {
+            display: block;
+            height: 300px;
+          }
+          h2 {
+            display: none;
+          }
+          h3 {
+            @include textCommun(19px);
+            text-align: center;
+            letter-spacing: 4px;
+            margin: 0 auto 22px;
+            @include mq(md) {
+              max-width: 750px;
+              font-size: 35px;
+            }
+          }
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
