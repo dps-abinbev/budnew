@@ -37,8 +37,13 @@ function agegate_form_alter(&$form, &$form_state, $form_id){
  */
 function agegate_page_attachments_alter(array &$page) {
 
-    $page['#attached']['library'][] = 'agegate/agegate';
-  
+  $page['#attached']['library'][] = 'agegate/agegate';
+  $config = \Drupal::config('agegate.settings');
+  $page['#attached']['drupalSettings']['age_gate_checker'] = array(
+    'age_gate_escape_crawlers' => $config->get('age_gate_escape_crawlers'),
+    'age_gate_crawler_regexp' => $config->get('age_gate_crawler_regexp'),
+  );
+
 }
 
 function agegate_preprocess_html(&$variables) {

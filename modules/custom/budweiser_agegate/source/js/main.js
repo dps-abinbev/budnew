@@ -62,6 +62,15 @@
                     }
                 }*/
 			}
+      var allowCrawler = false;
+      if (drupalSettings && drupalSettings.age_gate_checker && drupalSettings.age_gate_checker.age_gate_escape_crawlers == 1) {
+        var botPattern = drupalSettings.age_gate_checker.age_gate_crawler_regexp;
+        var re = new RegExp(botPattern, 'i');
+        var userAgent = navigator.userAgent;
+        if (re.test(userAgent)) {
+          allowCrawler = true;
+        }
+      }
 		}
 	};
 })(jQuery, Drupal);
