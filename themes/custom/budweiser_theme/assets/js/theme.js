@@ -123,31 +123,35 @@
   Drupal.behaviors.ageGateSlide2 = {
     attach: function attach(context, settings) {
       var yearReal,
-          mounthReal = false;
+          mounthReal = true;
       $("input.form-number").on("keyup", function (e) {
         //Validate field year and month is real
-        if (e.target.id == "edit-year1") {
-          yearReal = false;
-          if (e.key <= 2) {
-            yearReal = true;
-            focusInput(e.which, $(this).val().length, $(this));
-          }
-        }
-        if (e.target.id == "edit-month1") {
-          mounthReal = false;
-          if (e.key == 1) {
-            console.log("real");
-            mounthReal = true;
-            focusInput(e.which, $(this).val().length, $(this));
-          }
-        }
+        /*  if (e.target.id == "edit-year1") {
+           yearReal = false;
+           if (e.key <= 2) {
+             yearReal = true;
+             focusInput(e.which, $(this).val().length, $(this));
+           }
+         }
+         if (e.target.id == "edit-month1") {
+           mounthReal = false;
+           if (e.key == 1) {
+             console.log("real");
+             mounthReal = true;
+             focusInput(e.which, $(this).val().length, $(this));
+           }
+         } */
         //When not validate field
-        if (e.target.id != "edit-year1" && yearReal == true && e.target.id != "edit-month1" && e.target.id != "edit-month2") {
-          focusInput(e.which, $(this).val().length, $(this));
-        }
-        if (e.target.id != "edit-month1" && mounthReal == true) {
-          focusInput(e.which, $(this).val().length, $(this));
-        }
+        /*    if (
+             e.target.id != "edit-year1" &&
+             yearReal == true
+           ) {
+             focusInput(e.which, $(this).val().length, $(this));
+           } */
+        focusInput(e.which, $(this).val().length, $(this));
+        /*  if (e.target.id != "edit-month1" && mounthReal == true) {
+           focusInput(e.which, $(this).val().length, $(this));
+         } */
         //Focus next group
         if (e.target.id == "edit-year4" && $(this).val().length != 0) {
           $("#edit-row-1-2").addClass("active");

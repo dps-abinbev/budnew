@@ -4,7 +4,7 @@
     background-size: cover;
     background-size: 100%;
     background-repeat: no-repeat;
-    @include mq(md) {
+  /*   @include mq(md) {
       .field--name-field-tipo-de-documento {
         width: 35%;
         margin-right: 2.9%;
@@ -17,7 +17,7 @@
         display: inline-block;
         margin-bottom: 0.4rem;
       }
-    }
+    } */
     .field--name-field-ciudad {
       clear: both;
     }
