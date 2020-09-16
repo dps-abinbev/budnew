@@ -7,3 +7,9 @@ services:
     class: \Drupal\agegate\AgegatePathRedirect
     tags:
       - { name: event_subscriber, priority: 220 }
+
+  agegate.event_subscriber:
+    class: Drupal\agegate\EventSubscriber\AgegateSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
