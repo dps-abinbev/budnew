@@ -47,6 +47,16 @@
       #block-banneruser {
         overflow: hidden;
         position: relative;
+        height: 235px;
+        @include mq(sm) {
+          height: 500px;
+        }
+        @include mq(md) {
+          height: 500px;
+        }
+        @include mq(lg) {
+          height: 555px;
+        }
         img {
           width: 100%;
           transform: scale(2);
@@ -109,8 +119,8 @@
   }
 }
 .path-recover-password,
-.page-user-login{
-  .form-group{
+.page-user-login {
+  .form-group {
     margin-bottom: 1rem;
   }
 }

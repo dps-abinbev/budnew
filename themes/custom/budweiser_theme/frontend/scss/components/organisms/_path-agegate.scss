@@ -6,7 +6,7 @@
     #page {
       #main-wrapper {
         background-image: url("../images/bg/fondo-register-2.png");
-        background-size: 132%;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position-x: 50%;
         @include mq(md) {
@@ -25,7 +25,7 @@
             padding: 0 0 rem(1px) 0;
             margin: 36% auto 2rem;
             @include mq(md) {
-              margin: 34rem auto 2rem;
+              margin: 28rem auto 2rem;
             }
             .block-title {
               display: flex;
