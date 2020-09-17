@@ -57,7 +57,7 @@ function _ab_cdp_connector_user_register_form_submit($form, FormStateInterface $
     $data["purpose_name"] = [
       'TC-PP',
     ];
-    if($dataValues['field_receive_emails']['value'] == 1){
+    if($dataValues['field_promocionales_']['value'] == 1){
       $data["purpose_name"][] = 'MARKETING-ACTIVATION';
     }
 
