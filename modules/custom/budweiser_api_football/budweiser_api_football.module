@@ -35,13 +35,13 @@ function budweiser_api_football_cron() {
     }
   }
 }
+
 /**
- * Get Player object by id
- * @param int $player_id
+ * Get data from API Football
+ * @param string $url
  */
-function _budweiser_api_football_get_player_statistics($player_id = 0){
+function _budweiser_api_football_get_data($url = ''){
   $curl = curl_init();
-  $url = \Drupal::config('budweiser_api_football.settings')->get('api_url')."/players/player/{$player_id}";
   $host = \Drupal::config('budweiser_api_football.settings')->get('api_host');
   $key = \Drupal::config('budweiser_api_football.settings')->get('api_key');
   if($url && $host && $key){
@@ -66,14 +66,25 @@ function _budweiser_api_football_get_player_statistics($player_id = 0){
     curl_close($curl);
 
     if ($err) {
-      \Drupal::logger('')->notice("Curl Error Player = {$err}");
+      \Drupal::logger('')->notice("Curl Error API Football = {$err}");
+      return FALSE;
     } else {
       return $response;
     }
   }else{
+    \Drupal::logger()->notice('API Football', 'Datos del API sin configurar');
     \Drupal::messenger()->addMessage('Por favor diligencie los datos de configuración del API');
-    return false;
+    return FALSE;
   }
+}
+/**
+ * Get Player object by id
+ * @param int $player_id
+ */
+function _budweiser_api_football_get_player_statistics($player_id = 0){
+  $url = \Drupal::config('budweiser_api_football.settings')->get('api_url')."/players/player/{$player_id}";
+  $response = _budweiser_api_football_get_data($url);
+  return $response;
 }
 
 /**
@@ -81,39 +92,7 @@ function _budweiser_api_football_get_player_statistics($player_id = 0){
  * @param int $league_id
  */
 function _budweiser_api_football_get_teams($league_id = 0){
-  $curl = curl_init();
   $url = \Drupal::config('budweiser_api_football.settings')->get('api_url')."/teams/league/{$league_id}";
-  $host = \Drupal::config('budweiser_api_football.settings')->get('api_host');
-  $key = \Drupal::config('budweiser_api_football.settings')->get('api_key');
-  if($url && $host && $key) {
-    curl_setopt_array($curl, [
-      CURLOPT_URL => $url,
-      CURLOPT_RETURNTRANSFER => TRUE,
-      CURLOPT_FOLLOWLOCATION => TRUE,
-      CURLOPT_ENCODING => "",
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 30,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_HTTPHEADER => [
-        "x-rapidapi-host: $host",
-        "x-rapidapi-key: $key"
-      ],
-    ]);
-
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-
-    curl_close($curl);
-
-    if ($err) {
-      \Drupal::logger('')->notice("Curl Error Player = {$err}");
-    }
-    else {
-      return $response;
-    }
-  }else{
-    \Drupal::messenger()->addMessage('Por favor diligencie los datos de configuración del API');
-    return false;
-  }
+  $response = _budweiser_api_football_get_data($url);
+  return $response;
 }
