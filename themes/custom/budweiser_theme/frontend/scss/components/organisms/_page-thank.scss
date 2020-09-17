@@ -10,10 +10,10 @@ body {
               height: 300px;
             }
             @include mq(lg) {
-              height: 400px;
+              height: 300px;
             }
-             @include mq(xlg) {
-              height: 500px;
+            @include mq(xlg) {
+              height: 430px;
             }
             p {
               display: none;
@@ -34,6 +34,20 @@ body {
           background-size: cover;
           background-repeat: no-repeat;
           background-position-y: 121px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 50px;
+            top: -50px;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
+            @include mq(md) {
+              display: block;
+            }
+          }
           @include mq(md) {
             display: block;
             height: 300px;

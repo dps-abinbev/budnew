@@ -5,12 +5,12 @@
   #page-wrapper {
     #page {
       #main-wrapper {
-        background-image: url("../images/banners/1_REGISTRO.jpg");
+        background-image: url("../images/bg/fondo-register-2.png");
         background-size: 132%;
         background-repeat: no-repeat;
         background-position-x: 50%;
         @include mq(md) {
-          background-size: 100%;
+          background-size: contain;
         }
         .col {
           padding: 0;
