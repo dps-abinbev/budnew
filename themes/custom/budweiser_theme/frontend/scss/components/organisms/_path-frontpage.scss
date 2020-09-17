@@ -1,8 +1,17 @@
 .path-frontpage {
   #block-banneruser {
-    height: 200px;
+    height: 235px;
+    @include mq(sm) {
+      height: 500px;
+    }
     @include mq(md) {
-      height: 400px;
+      height: 500px;
+    }
+    @include mq(lg) {
+      height: 655px;
+    }
+    @include mq(xlg) {
+      height: 655px;
     }
   }
   .block-system-main-block {
@@ -21,14 +30,14 @@
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
       display: none;
       @include mq(md) {
-        display: block;
+        //display: block;
       }
     }
     .field--name-field-ciudad {
       clear: both;
     }
     .content {
-      max-width: 90%;
+      max-width: 450px;
       margin: 0 auto 2rem;
       @include mq(md) {
         max-width: 450px;
@@ -41,13 +50,19 @@
   overflow: hidden;
   position: relative;
   img {
+   max-width: 1262px;
+    text-align: center;
+    margin: 0 auto;
     width: 100%;
-    transform: scale(2);
-    margin-top: 52px;
-    @include mq(md) {
+    display: block;
+  /*   @include mq(md) {
       transform: scale(1);
-      margin-top: 0;
+      margin-top: 88px;
     }
+    @include mq(lg) {
+      transform: scale(1);
+      margin-top: 88px;
+    } */
   }
   p {
     text-align: center;
@@ -62,8 +77,10 @@
     left: 0;
     right: 0;
     font-size: 19px;
-    @include mq(md) {
+    @include mq(sm) {
       font-size: 36px;
+    }
+    @include mq(md) {
       position: absolute;
       bottom: 20px;
       width: 600px;

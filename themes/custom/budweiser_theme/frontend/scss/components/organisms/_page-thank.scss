@@ -6,14 +6,15 @@ body {
           #block-banneruser {
             position: relative;
             overflow: hidden;
+            height: 235px;
+            @include mq(sm) {
+              height: 500px;
+            }
             @include mq(md) {
-              height: 300px;
+              height: 500px;
             }
             @include mq(lg) {
-              height: 300px;
-            }
-            @include mq(xlg) {
-              height: 430px;
+              height: 555px;
             }
             p {
               display: none;
