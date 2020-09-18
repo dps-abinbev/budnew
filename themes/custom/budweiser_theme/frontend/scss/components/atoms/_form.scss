@@ -1,0 +1,261 @@
+label {
+  color: $primary-light;
+  font-family: $bud;
+  font-weight: regular;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+small {
+  display: none;
+}
+.password-confirm-message {
+  display: none;
+}
+input {
+  &[type="*"] {
+    @extend [type="number"];
+  }
+  &[type="text"] {
+    @extend [type="number"];
+  }
+  &[type="number"] {
+    background-color: $primary-light;
+    border-radius: 0;
+    color: black;
+    font-family: $bud;
+    border: 0px;
+    font-size: 16px;
+    &:focus {
+      background-color: $primary-light;
+      color: black;
+    }
+    &:hover {
+      font-family: $bud;
+    }
+    &::checked {
+      background: cyan;
+      font-family: $bud;
+    }
+  }
+  &[type="email"] {
+    @extend [type="number"];
+  }
+  &[type="password"] {
+    @extend [type="number"];
+  }
+  &[type="datetime"] {
+    @extend [type="number"];
+  }
+  &[type="date"] {
+    @extend [type="number"];
+  }
+  &[type="month"] {
+    @extend [type="number"];
+  }
+  &[type="time"] {
+    @extend [type="number"];
+  }
+  &[type="week"] {
+    // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+    @extend [type="number"];
+  }
+  &[type="checkbox"] {
+    display: none; /*solo se esconde para tener un campo personalisado*/
+  }
+}
+.form-group {
+  margin-bottom: 0;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary.focus,
+.btn-primary:focus,
+.btn.focus,
+.btn:focus {
+  box-shadow: none;
+}
+.password-strength__meter,
+.password-strength {
+  display: none;
+}
+.password-suggestions {
+  font-size: 13px;
+  ul {
+    li {
+      font-size: 13px;
+    }
+  }
+}
+#edit-actions {
+  display: flex;
+  justify-content: center;
+}
+.btn-primary {
+  border-radius: 0;
+  padding: 0 5px;
+  background-color: $primary-light;
+  border-color: $primary-light;
+  color: $white;
+  font-family: $bud;
+  text-transform: uppercase;
+  @include mq(md) {
+    font-size: 20px;
+  }
+}
+.field--type-boolean {
+  width: 90%;
+  margin: 0 auto 20px;
+  label {
+    font-size: 10px;
+    text-transform: inherit;
+    color: $text-gray;
+    @include mq(md) {
+      font-size: 12px;
+    }
+  }
+}
+
+//_____
+.custom-select.is-invalid,
+.form-control.is-invalid,
+.was-validated .custom-select:invalid,
+.was-validated .form-control:invalid {
+  border-color: $white;
+  font-size: 1rem;
+}
+
+input {
+  &.error {
+    border: 2px solid white;
+    + label {
+      &::before {
+      }
+    }
+  }
+}
+button.edit-submit {
+}
+
+.form-control:focus {
+  color: #ff0000b0;
+  box-shadow: none;
+}
+
+.text-count-message,
+.text-count-wrapper.webform-counter-warning {
+  color: #ff0000b0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.text-count-wrapper {
+  margin-top: -10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $black;
+  font-family: $bud;
+  -webkit-box-shadow: 0 0 0px 1000px $primary inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-textarea-wrapper {
+  textarea {
+    background-color: $primary;
+    color: $primary;
+    text-align: center;
+    font-weight: 500;
+    border: 0;
+    border-radius: 0;
+    &:focus {
+      background-color: $secundary-light;
+      color: $primary;
+    }
+  }
+}
+.custom-control-label::after {
+  background-color: $primary;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.error {
+  color: $white;
+  font-size: 13px;
+  text-transform: initial;
+}
+.checkbox {
+  .custom-control-input:checked ~ .custom-control-label {
+    &:before {
+      background-color: $primary;
+      border-radius: 50%;
+    }
+    &:after {
+      background-color: black;
+      left: -21px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.custom-control-label {
+  padding-left: 4px;
+  padding-top: 1px;
+  &:before {
+    background-color: transparent;
+  }
+}
+
+.form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  .form-type-select,
+  .form-item-building-apartment {
+    flex: 0 0 100% !important;
+  }
+  .form-type-number,
+  .form-type-textfield {
+    flex: 0 0 33.3%;
+    input {
+      margin-top: 0;
+    }
+  }
+}
+.custom-select {
+  border-radius: 0;
+  border: none;
+  color: black;
+  background-color: $primary;
+  height: 36px;
+  font-family: $bud;
+  font-size: 16px;
+}
+.field--widget-options-select {
+  label {
+    margin-bottom: 5px;
+  }
+}

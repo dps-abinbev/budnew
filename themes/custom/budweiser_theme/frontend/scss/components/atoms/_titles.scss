@@ -1,0 +1,38 @@
+.block-title {
+  h2.title {
+    color: $white;
+    font-size: 25px;
+    font-family: $bud;
+    @include mq(md) {
+      font-size: 37px;
+    }
+  }
+}
+.slick--skin--fullwidth {
+  h1, h2 {
+    font-size: 35px;
+    text-align: center;
+    @include mq(md) {
+      font-size: 95px;
+    }
+    &.slide__title {
+      font-size: 30px;
+      @include mq(md) {
+        font-size: 90px;
+      }
+    }
+  }
+}
+
+.view .view-header {
+  h3 {
+    font-size: 40px;
+
+    @include mq(md) {
+      font-size: 85px;
+    }
+    span {
+
+    }
+  }
+}

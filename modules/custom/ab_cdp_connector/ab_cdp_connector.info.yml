@@ -1,0 +1,7 @@
+name: Ab InBev CDP Connector
+type: module
+description: This module allow configure the CDP connector
+package: Ab InBev
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '2.0'

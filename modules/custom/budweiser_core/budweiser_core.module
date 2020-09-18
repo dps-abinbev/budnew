@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Budweiser Core module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+define('PREMIER_LEAGUE', 2790);
+define('LIGA_SANTANDER', 2833);
+/**
+ * Implements hook_form_alter().
+ */
+function budweiser_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if($form_id == 'field_config_edit_form' && isset($form['settings']['on_label'])){
+    $form['settings']['on_label']['#type'] = 'textarea';
+    $form['settings']['on_label']['#description'] = t('The html is allowed and the maximum length is 1000 characters');
+    $form['settings']['on_label']['#maxlength'] = 1000;
+  }elseif ($form_id == 'user_pass'){
+    $form['description'] = [
+      '#type' => 'item',
+      '#markup' => t('Ingresa el correo electrónico que registraste anteriormente para recuperar tu contraseña.'),
+      '#weight' => 1,
+    ];
+    $form['name']['#title'] = new TranslatableMarkup('MAIL');
+    $form['name']['#weight'] = 2;
+    unset($form['mail']);
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('RECUPERAR CONTRASEÑA');
+  }elseif($form_id == 'user_register_form'){
+    $form['#attached']['library'][] = 'budweiser_core/budweiser_datalayer';
+    $form['field_nombre']['widget'][0]['value']['#attributes']['data-qadp'] = 'name';
+    $form['field_celular']['widget'][0]['value']['#attributes']['data-qadp'] = 'cellphone';
+    $form['field_identificacion']['widget'][0]['value']['#attributes']['data-qadp'] = 'identification';
+    $form['field_ciudad']['widget']['#attributes']['data-qadp'] = 'city';
+    $form['account']['mail']['#attributes']['data-qadp'] = 'email';
+    $form['account']['pass']['#attributes']['data-qadp'] = 'password';
+    $form['field_terminos']['widget']['value']['#attributes']['data-qadp'] = 'input-tc-pp';
+    $form['field_promocionales_']['widget']['value']['#attributes']['data-qadp'] = 'input-marketing';
+    $form['actions']['submit']['#attributes']['data-qadp'] = 'send-button-form';
+    $form['account']['name']['#access'] = FALSE;
+    $form['account']['name']['#required'] = FALSE;
+    $form['#attributes']['data-user-info-from-browser'] = FALSE;
+    $form['account']['mail']['#attributes']['autocomplete'] = 'off';
+    array_unshift($form['#validate'], '_budweiser_core_user_register_validate_form');
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('REGISTRARME');
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function budweiser_core_local_tasks_alter(&$local_tasks) {
+  unset($local_tasks['user.pass']);
+  unset($local_tasks['user.login']);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function budweiser_core_user_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  _my_goto('/gracias-registro');
+}
+
+//Custom Functions
+function _budweiser_core_user_register_validate_form($form, FormStateInterface $formState){
+  if($formState->getValue('field_terminos')['value'] == 0){
+    $formState->setErrorByName('field_terminos', 'El campo Términos y condiciones es requerido');
+  }
+  $mail = $formState->getValue('mail');
+  $formState->setValue('name', $mail);
+}
+
+/**
+ * Function which replace drupal_goto of drupal 7.
+ * @param $path
+ */
+function _my_goto($path) {
+  $response = new RedirectResponse($path);
+  $response->send();
+  return;
+}

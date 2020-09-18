@@ -1,0 +1,19 @@
+agegate:
+  js:
+    source/js/main.js: {}
+    https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2: { type: external, async : true, defer : true  }
+
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+validate:
+  version: 1.x
+  js:
+    //cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js: { type: external }
+    source/js/validate.js: {}
+  dependencies:
+    - core/jquery
+# base:
+#   version: 1

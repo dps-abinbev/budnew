@@ -1,0 +1,4 @@
+administer budweiser_api_football configuration:
+  title: 'Administer budweiser_api_football configuration'
+  description: 'Optional description.'
+  restrict access: true

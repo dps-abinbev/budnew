@@ -1,0 +1,126 @@
+.path-user,
+.path-recover-password,
+.page-user-register {
+  #main-wrapper {
+    .tabs {
+      ul.nav.nav-tabs {
+        border-bottom: 1px solid $primary;
+        display: flex;
+        justify-content: center;
+        li.nav-item {
+          width: 50%;
+          text-align: center;
+          a {
+            color: $text-gray;
+            font-family: $bud;
+            text-transform: uppercase;
+            font-size: 14px;
+            @include mq(md) {
+              font-size: 18px;
+            }
+            &:hover {
+              border-color: transparent;
+            }
+          }
+          &.active {
+            position: relative;
+            a {
+              background-color: initial;
+              border-color: transparent;
+              color: $primary;
+            }
+            &::before {
+              content: "";
+              background-color: #b1142f;
+              width: 100%;
+              height: 6px;
+              left: 0;
+              position: absolute;
+              bottom: -3px;
+            }
+          }
+        }
+      }
+    }
+    .main-content {
+      padding: 0;
+      #block-banneruser {
+        overflow: hidden;
+        position: relative;
+        height: 235px;
+        @include mq(sm) {
+          height: 500px;
+        }
+        @include mq(md) {
+          height: 500px;
+        }
+        @include mq(lg) {
+          height: 555px;
+        }
+        img {
+          width: 100%;
+          transform: scale(2);
+          margin-top: 52px;
+          @include mq(md) {
+            transform: scale(1);
+            margin-top: 0;
+          }
+        }
+        p {
+          text-align: center;
+          font-weight: 400;
+          font-family: $bud;
+          text-transform: uppercase;
+          color: $white;
+          @include mq(md) {
+            font-size: 36px;
+            position: absolute;
+            bottom: 66px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            width: 40%;
+          }
+        }
+      }
+      .block-system-main-block {
+        background-image: url("../images/bg/fondo-register.png");
+        background-size: cover;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        @include mq(md) {
+          .field--name-field-tipo-de-documento {
+            width: 35%;
+            margin-right: 2.9%;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 0.4rem;
+          }
+          .field--name-field-identificacion {
+            width: 61%;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+          }
+        }
+        .field--name-field-ciudad {
+          clear: both;
+        }
+      }
+      .block-system-main-block .content,
+      .tabs {
+        max-width: 90%;
+        margin: 0 auto 2rem;
+        @include mq(md) {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+}
+.path-recover-password,
+.page-user-login {
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}

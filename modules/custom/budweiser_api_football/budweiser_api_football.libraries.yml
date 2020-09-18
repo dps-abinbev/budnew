@@ -1,0 +1,11 @@
+## Custom module library for general purposes.
+#budweiser_api_football:
+#  js:
+#    js/budweiser-api-football.js: {}
+#  css:
+#    component:
+#      css/budweiser-api-football.css: {}
+#  dependencies:
+#    - core/drupalSettings
+#    - budweiser_api_football/jquery-labelauty
+#

@@ -1,0 +1,7 @@
+name: Budweiser Core
+type: module
+description: This module contains main functionalities of budweiser
+package: Ab InBev
+core: 8.x
+version: 1.2
+core_version_requirement: ^8 || ^9

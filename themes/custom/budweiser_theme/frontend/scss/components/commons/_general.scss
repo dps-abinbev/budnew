@@ -1,0 +1,21 @@
+body{
+  background-color: $black;
+}
+p {
+  margin-bottom: 0;
+}
+#page {
+}
+#page,
+#main-wrapper,
+.region-primary-menu .menu-item a.is-active,
+.region-primary-menu .menu-item--active-trail a {
+  background: transparent;
+}
+button:focus {
+  outline: 0;
+}
+.form-group{
+ //margin-bottom: 0;
+}
+

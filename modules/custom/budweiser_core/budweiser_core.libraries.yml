@@ -1,0 +1,6 @@
+# Custom module library for general purposes.
+budweiser_datalayer:
+  js:
+    js/budweiser_datalayer.js: {}
+  dependencies:
+    - core/jquery

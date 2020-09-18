@@ -1,0 +1,33 @@
+.header {
+  background-color: $primary;
+  .navbar-brand{
+    margin-left: 10px;
+  }
+  .navbar {
+    padding: 0;
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          font-size: 17px;
+          font-family: $bud;
+          color: $white;
+          text-align: center;
+          @include mq(md) {
+            font-size: 21px;
+            text-transform: uppercase;
+            text-align: initial;
+          }
+          &:hover,
+          &.active {
+          }
+        }
+        &:last-child {
+          .nav-link {
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,17 @@
+agegate.settings:
+  type: mapping
+  label: 'Age Gate Settings'
+  mapping:
+    agegate_age_limit:
+      type: integer
+      label: 'Age limit'
+    agegate_urls_to_skip:
+      type: string
+      label: 'URLs to skip'
+    agegate_description:
+      type: string
+      label: 'Message to the user'
+    agegate_user_agents:
+      type: string
+      label: 'Search Agents to skip'
+

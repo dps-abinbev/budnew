@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Ab InBev CDP Connector module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ab_cdp_connector_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  global $ad_cdp_connector_items;
+  switch ($route_name) {
+    case 'help.cdp_connector':
+      return (
+        '<h1>' . t('ABinbev CDP Connector') . '</h1>' .
+        '<h2>' . t('Introduction') . '</h2>' .
+        '<p>' .
+        t('This module allow configure the CDP connector with a Custom form.') .
+        '</p>Dictionary:'.json_encode($ad_cdp_connector_items)
+      );
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ab_cdp_connector_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // @todo come up with a more elegant approach here.
+  // Alter login form and add own custom submit handler.
+  $form['actions']['submit']['#submit'][] = '_ab_cdp_connector_user_register_form_submit';
+}
+
+/**
+ * Custom submit handler for registration form with CDP.
+ */
+function _ab_cdp_connector_user_register_form_submit($form, FormStateInterface $form_state) {
+  $cdp_on = \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_general_custom_on');
+  if($cdp_on){
+    $dataValues = $form_state->getValues();
+
+    $http_protocol = isset($_SERVER['https']) ? 'https://' : 'http://';
+    $data["abi_brand"] = \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_brand');
+    $data["abi_campaign"] = \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_campaign');
+    $data['abi_form'] = \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_form_type');;
+    $data['td_unify'] = true;
+    $data["td_import_method"] = "postback-api-1.2";
+    $data["td_client_id"] = $_COOKIE['_td'];
+    $data["td_url"] = $http_protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $data["td_host"] = $_SERVER['HTTP_HOST'];
+    $data["purpose_name"] = [
+      'TC-PP',
+    ];
+    if($dataValues['field_promocionales_']['value'] == 1){
+      $data["purpose_name"][] = 'MARKETING-ACTIVATION';
+    }
+
+    $data['abi_name'] = $dataValues['field_nombre'][0]['value'].' '.$dataValues['field_apellido'][0]['value'];
+    $data['abi_cpf'] = $dataValues['field_identificacion'][0]['value'];
+    $data['abi_email'] = $dataValues['mail'];
+    $data['abi_phone'] = $dataValues['field_celular'][0]['value'];
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($dataValues['field_ciudad'][0]['target_id']);
+    $data['abi_city'] = $term->name->value;
+    $data['abi_country'] = 'col';
+
+    $zone = \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_zone');
+
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_URL            => "https://in.treasuredata.com/postback/v3/event/" . $zone,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING       => "",
+      CURLOPT_MAXREDIRS      => 10,
+      CURLOPT_TIMEOUT        => 30,
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST  => "POST",
+      CURLOPT_POSTFIELDS     => json_encode($data),
+      CURLOPT_HTTPHEADER     => array(
+        "Accept: */*",
+        "Accept-Encoding: gzip, deflate",
+        "Cache-Control: no-cache",
+        "Connection: keep-alive",
+        "Content-Type: application/json",
+        "X-TD-Write-Key: " . \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_webform_env'),
+        "cache-control: no-cache",
+      ),
+    ));
+    $response      = curl_exec($curl);
+    $response_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    $err           = curl_error($curl);
+
+    \Drupal::logger('ab_cdp_connector_message')->notice("url: %url <br>Response:  %response <br> Response Code: %response_code <br> key : %key <br> json: %json", array(
+      '%url'           => \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_zone'),
+      "%key"           => \Drupal::config('ab_cdp_connector.settings')->get('ab_cdp_connector_webform_env'),
+      "%json"          => json_encode($data),
+      "%response"      => $response,
+      "%response_code" => $response_code,
+    ));
+  }
+}

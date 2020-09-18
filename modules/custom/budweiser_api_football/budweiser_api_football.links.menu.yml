@@ -1,0 +1,14 @@
+# Simple link.
+budweiser.settings_form:
+  title: Budweiser
+  description: Budweiser configurations.
+  parent: system.admin_config
+  route_name: budweiser.settings_form
+  weight: 2
+
+# Child link.
+budweiser_api_football.settings_form:
+  title: Api Football
+  parent: budweiser.settings_form
+  route_name: budweiser_api_football.settings_form
+  weight: 5

@@ -1,0 +1,29 @@
+.view-sliders {
+  .slick {
+  }
+  .view-content {
+    .media--slick {
+    }
+    .slide__constrained {
+      @include mq(md) {
+      }
+      .slide__caption {
+      }
+      p {
+      }
+    }
+
+    .slick-arrow {
+      &::before {
+      }
+    }
+    .slick-next {
+      @include mq(lg) {
+      }
+    }
+    .slick-prev {
+      @include mq(lg) {
+      }
+    }
+  }
+}

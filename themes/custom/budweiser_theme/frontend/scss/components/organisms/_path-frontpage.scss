@@ -1,0 +1,112 @@
+.path-frontpage {
+  #block-banneruser {
+    height: 235px;
+    @include mq(sm) {
+      height: 500px;
+    }
+    @include mq(md) {
+      height: 500px;
+    }
+    @include mq(lg) {
+      height: 655px;
+    }
+    @include mq(xlg) {
+      height: 655px;
+    }
+  }
+  .block-system-main-block {
+    background-image: url("../images/bg/fondo-register.png");
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: -50px;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
+      display: none;
+      @include mq(md) {
+        //display: block;
+      }
+    }
+    .field--name-field-ciudad {
+      clear: both;
+    }
+    .content {
+      max-width: 450px;
+      margin: 0 auto 2rem;
+      @include mq(md) {
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+#block-banneruser {
+  overflow: hidden;
+  position: relative;
+  img {
+   max-width: 1262px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+  /*   @include mq(md) {
+      transform: scale(1);
+      margin-top: 88px;
+    }
+    @include mq(lg) {
+      transform: scale(1);
+      margin-top: 88px;
+    } */
+  }
+  p {
+    text-align: center;
+    font-weight: 400;
+    font-family: $bud;
+    text-transform: uppercase;
+    color: $white;
+    position: absolute;
+    bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    font-size: 19px;
+    @include mq(sm) {
+      font-size: 36px;
+    }
+    @include mq(md) {
+      position: absolute;
+      bottom: 20px;
+      width: 600px;
+    }
+  }
+}
+/* .block-system-main-block {
+  background-image: url("../images/bg/fondo-register.png");
+  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @include mq(md) {
+    .field--name-field-tipo-de-documento {
+      width: 35%;
+      margin-right: 2.9%;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 0.4rem;
+    }
+    .field--name-field-identificacion {
+      width: 61%;
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+  }
+  .field--name-field-ciudad {
+    clear: both;
+  }
+} */

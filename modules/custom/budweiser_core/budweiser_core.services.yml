@@ -1,0 +1,5 @@
+services:
+  budweiser_core.route_subscriber:
+    class: Drupal\budweiser_core\EventSubscriber\BudweiserCoreRouteSubscriber
+    tags:
+      - { name: event_subscriber }

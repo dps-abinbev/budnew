@@ -1,0 +1,8 @@
+name: budweiser_profiling_questions
+type: module
+description: This module contains the logic to implements the wizard form with questions
+package: Ab InBev
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - budweiser_core
